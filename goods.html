@@ -1,5 +1,3 @@
-<!-- FILEPATH: /c:/Users/user/Desktop/ResponsiveWeb/attraction.html -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,148 +14,170 @@
     <script>
         const itemsPerPage = 10; // 페이지당 아이템 수
         const items = [
-            { name: "item1" },
-            { name: "item2" },
-            { name: "item3" },
-            { name: "item4" },
-            { name: "item5" },
-            { name: "item6" },
-            { name: "item7" },
-            { name: "item8" },
-            { name: "item9" },
-            { name: "item10" },
-            { name: "item11" },
-            { name: "item12" },
-            { name: "item13" },
-            { name: "item14" },
-            { name: "item15" },
-            { name: "item16" },
-            { name: "item17" },
-            { name: "item18" },
-            { name: "item19" },
-            { name: "item20" },
-            { name: "item21" },
-            { name: "item22" },
-            { name: "item23" },
-            { name: "item24" },
-            { name: "item25" },
-            { name: "item26" },
-            { name: "item27" },
-            { name: "item28" },
-            { name: "item29" },
-            { name: "item30" },
-            { name: "item31" },
-            { name: "item32" },
-            { name: "item33" },
-            { name: "item34" },
-            { name: "item35" },
-            { name: "item36" },
-            { name: "item37" },
-            { name: "item38" },
-            { name: "item39" },
-            { name: "item40" },
-            { name: "item41" },
-            { name: "item42" },
-            { name: "item43" },
-            { name: "item44" },
-            { name: "item45" },
-            { name: "item46" },
-            { name: "item47" },
-            { name: "item48" },
-            { name: "item49" },
-            { name: "item50" },
-            { name: "item51" },
-            { name: "item52" },
-            { name: "item53" },
-            { name: "item54" },
-            { name: "item55" },
-            { name: "item56" },
-            { name: "item57" },
-            { name: "item58" },
-            { name: "item59" },
-            { name: "item60" },
-            { name: "item61" },
-            { name: "item62" },
-            { name: "item63" },
-            { name: "item64" },
-            { name: "item65" },
-            { name: "item66" },
-            { name: "item67" },
-            { name: "item68" },
-            { name: "item69" },
-            { name: "item70" },
-            { name: "item71" },
-            { name: "item72" },
-            { name: "item73" },
-            { name: "item74" },
-            { name: "item75" },
-            { name: "item76" },
-            { name: "item77" },
-            { name: "item78" },
-            { name: "item79" },
-            { name: "item80" },
-            { name: "item81" },
-            { name: "item82" },
-            { name: "item83" },
-            { name: "item84" },
-            { name: "item85" },
-            { name: "item86" },
-            { name: "item87" },
-            { name: "item88" },
-            { name: "item89" },
-            { name: "item90" },
-            { name: "item91" },
-            { name: "item92" },
-            { name: "item93" },
-            { name: "item94" },
-            { name: "item95" },
-            { name: "item96" },
-            { name: "item97" },
-            { name: "item98" },
-            { name: "item99" },
-            { name: "item100" }
-        ]; // 아이템 데이터 배열
+            { name: "item1", price: "1000", image: "image1.jpg" },
+            { name: "item2", price: "2000", image: "image2.jpg" },
+            { name: "item3", price: "3000", image: "image3.jpg" },
+            { name: "item4", price: "4000", image: "image4.jpg" },
+            { name: "item5", price: "5000", image: "image5.jpg" },
+            { name: "item6", price: "6000", image: "image6.jpg" },
+            { name: "item7", price: "7000", image: "image7.jpg" },
+            { name: "item8", price: "8000", image: "image8.jpg" },
+            { name: "item9", price: "9000", image: "image9.jpg" },
+            { name: "item10", price: "10000", image: "image10.jpg" },
+            { name: "item11", price: "11000", image: "image11.jpg" },
+            { name: "item12", price: "12000", image: "image12.jpg" },
+            { name: "item13", price: "13000", image: "image13.jpg" },
+            { name: "item14", price: "14000", image: "image14.jpg" },
+            { name: "item15", price: "15000", image: "image15.jpg" },
+            { name: "item16", price: "16000", image: "image16.jpg" },
+            { name: "item17", price: "17000", image: "image17.jpg" },
+            { name: "item18", price: "18000", image: "image18.jpg" },
+            { name: "item19", price: "19000", image: "image19.jpg" },
+            { name: "item20", price: "20000", image: "image20.jpg" },
+            { name: "item21", price: "21000", image: "image21.jpg" },
+            { name: "item22", price: "22000", image: "image22.jpg" },
+            { name: "item23", price: "23000", image: "image23.jpg" },
+            { name: "item24", price: "24000", image: "image24.jpg" },
+            { name: "item25", price: "25000", image: "image25.jpg" },
+            { name: "item26", price: "26000", image: "image26.jpg" },
+            { name: "item27", price: "27000", image: "image27.jpg" },
+            { name: "item28", price: "28000", image: "image28.jpg" },
+            { name: "item29", price: "29000", image: "image29.jpg" },
+            { name: "item30", price: "30000", image: "image30.jpg" },
+            { name: "item31", price: "31000", image: "image31.jpg" },
+            { name: "item32", price: "32000", image: "image32.jpg" },
+            { name: "item33", price: "33000", image: "image33.jpg" },
+            { name: "item34", price: "34000", image: "image34.jpg" },
+            { name: "item35", price: "35000", image: "image35.jpg" },
+            { name: "item36", price: "36000", image: "image36.jpg" },
+            { name: "item37", price: "37000", image: "image37.jpg" },
+            { name: "item38", price: "38000", image: "image38.jpg" },
+            { name: "item39", price: "39000", image: "image39.jpg" },
+            { name: "item40", price: "40000", image: "image40.jpg" },
+            { name: "item41", price: "41000", image: "image41.jpg" },
+            { name: "item42", price: "42000", image: "image42.jpg" },
+            { name: "item43", price: "43000", image: "image43.jpg" },
+            { name: "item44", price: "44000", image: "image44.jpg" },
+            { name: "item45", price: "45000", image: "image45.jpg" },
+            { name: "item46", price: "46000", image: "image46.jpg" },
+            { name: "item47", price: "47000", image: "image47.jpg" },
+            { name: "item48", price: "48000", image: "image48.jpg" },
+            { name: "item49", price: "49000", image: "image49.jpg" },
+            { name: "item50", price: "50000", image: "image50.jpg" },
+            { name: "item51", price: "51000", image: "image51.jpg" },
+            { name: "item52", price: "52000", image: "image52.jpg" },
+            { name: "item53", price: "53000", image: "image53.jpg" },
+            { name: "item54", price: "54000", image: "image54.jpg" },
+            { name: "item55", price: "55000", image: "image55.jpg" },
+            { name: "item56", price: "56000", image: "image56.jpg" },
+            { name: "item57", price: "57000", image: "image57.jpg" },
+            { name: "item58", price: "58000", image: "image58.jpg" },
+            { name: "item59", price: "59000", image: "image59.jpg" },
+            { name: "item60", price: "60000", image: "image60.jpg" },
+            { name: "item61", price: "61000", image: "image61.jpg" },
+            { name: "item62", price: "62000", image: "image62.jpg" },
+            { name: "item63", price: "63000", image: "image63.jpg" },
+            { name: "item64", price: "64000", image: "image64.jpg" },
+            { name: "item65", price: "65000", image: "image65.jpg" },
+            { name: "item66", price: "66000", image: "image66.jpg" },
+            { name: "item67", price: "67000", image: "image67.jpg" },
+            { name: "item68", price: "68000", image: "image68.jpg" },
+            { name: "item69", price: "69000", image: "image69.jpg" },
+            { name: "item70", price: "70000", image: "image70.jpg" },
+            { name: "item71", price: "71000", image: "image71.jpg" },
+            { name: "item72", price: "72000", image: "image72.jpg" },
+            { name: "item73", price: "73000", image: "image73.jpg" },
+            { name: "item74", price: "74000", image: "image74.jpg" },
+            { name: "item75", price: "75000", image: "image75.jpg" },
+            { name: "item76", price: "76000", image: "image76.jpg" },
+            { name: "item77", price: "77000", image: "image77.jpg" },
+            { name: "item78", price: "78000", image: "image78.jpg" },
+            { name: "item79", price: "79000", image: "image79.jpg" },
+            { name: "item80", price: "80000", image: "image80.jpg" },
+            { name: "item81", price: "81000", image: "image81.jpg" },
+            { name: "item82", price: "82000", image: "image82.jpg" }
+        ];
 
-        function displayItems(items, startIndex, endIndex) {
-            const container = document.getElementById("item-container");
+        const container = document.getElementById("item-container");
+        const pagination = document.getElementById("pagination");
+
+        function showItems(page) {
             container.innerHTML = "";
-
-            for (let i = startIndex; i < endIndex; i++) {
-                const item = items[i];
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedItems = items.slice(start, end);
+            paginatedItems.forEach(item => {
                 const itemElement = document.createElement("div");
                 itemElement.classList.add("item");
-                itemElement.textContent = item.name; // 아이템 이름을 출력
+
+                const imageElement = document.createElement("img");
+                imageElement.src = item.image;
+                itemElement.appendChild(imageElement);
+
+                const nameElement = document.createElement("div");
+                nameElement.innerText = item.name;
+                itemElement.appendChild(nameElement);
+
+                const priceElement = document.createElement("div");
+                priceElement.innerText = item.price;
+                itemElement.appendChild(priceElement);
+
                 container.appendChild(itemElement);
-            }
+            });
         }
 
-        function displayPagination(totalItems, currentPage) {
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            const pagination = document.getElementById("pagination");
+        function setupPagination() {
             pagination.innerHTML = "";
+            const pageCount = Math.ceil(items.length / itemsPerPage); //페이지 수
+            const btn_page=1; //btn_page=현재 버튼 페이지
+            for (let i = 5*(btn_page-1)+1; i <=5*(btn_page-1)+5 ; i++) {
+                const button = document.createElement("button");
+                button.innerText = i;
 
-            for (let i = 1; i <= totalPages; i++) {
-                const pageLink = document.createElement("a");
-                pageLink.href = "#";
-                pageLink.classList.add("page-link");
-                pageLink.textContent = i;
-
-                if (i === currentPage) {
-                    pageLink.classList.add("active");
+                if (i === 1) {
+                    button.classList.add("active");
                 }
 
-                pageLink.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    displayItems(items, (i - 1) * itemsPerPage, i * itemsPerPage);
-                    displayPagination(totalItems, i);
+                button.addEventListener("click", () => {
+                    showItems(i);
+                    const currentButton = document.querySelector(".pagination button.active");
+                    currentButton.classList.remove("active");
+                    button.classList.add("active");
                 });
 
-                pagination.appendChild(pageLink);
+                pagination.appendChild(button);
             }
+
+            const prevButton = document.createElement("button");
+            prevButton.innerText = "<";
+            prevButton.addEventListener("click", () => {
+                const currentButton = document.querySelector(".pagination button.active");
+                if (currentButton.previousSibling) {
+                    const prevPage = parseInt(currentButton.previousSibling.innerText)-5;
+                    showItems(prevPage);
+                    currentButton.classList.remove("active");
+                    currentButton.previousSibling.classList.add("active");
+                }
+            });
+            pagination.insertBefore(prevButton, pagination.firstChild);
+
+            const nextButton = document.createElement("button");
+            nextButton.innerText = ">";
+            nextButton.addEventListener("click", () => {
+                btn_page++;
+                const currentButton = document.querySelector(".pagination button.active");
+                if (currentButton.nextSibling) {
+                    const nextPage = parseInt(currentButton.nextSibling.innerText);
+                    showItems(nextPage);
+                    currentButton.classList.remove("active");
+                    currentButton.nextSibling.classList.add("active");
+                }
+            });
+            pagination.appendChild(nextButton);
         }
 
-        displayItems(items, 0, itemsPerPage);
-        displayPagination(items.length, 1);
+        showItems(1);
+        setupPagination();
     </script>
 </body>
 </html>
