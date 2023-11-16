@@ -74,6 +74,27 @@ img {
     object-fit: cover;
 }
 
+
+.footer_item01{
+    width: 20%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #ffffff;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer_item02{
+    width: 5%;
+    height: 100%;
+    object-fit: contain;
+    color: #ffffff;
+    filter: grayscale(100%);
+    display: block;
+    margin: 0 auto;
+}
+
+
 @keyframes fuwafuwa-2 {
     0%, 100% {
         transform: translateY(-30px); /* 수정: -webkit-transform 제거 */
