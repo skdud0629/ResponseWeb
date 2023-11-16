@@ -1,139 +1,163 @@
+<!-- FILEPATH: /c:/Users/user/Desktop/ResponsiveWeb/attraction.html -->
+
 <!DOCTYPE html>
 <html>
 <head>
+    <title>페이징 처리 예제</title>
     <meta charset="UTF-8">
-    <title>상품 목록</title>
-    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="Styles_goods.css">
+   
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#" class="category" data-category="all">전체</a></li>
-                <li><a href="#" class="category" data-category="clothes">의류</a></li>
-                <li><a href="#" class="category" data-category="electronics">가전제품</a></li>
-                <li><a href="#" class="category" data-category="food">식품</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <ul class="products" data-category="clothes">
-                <h2>의류</h2>
-                <li>
-                    <h3>상품1</h3>
-                    <img src="/images/product1.jpg" alt="상품1 이미지">
-                    <p>가격: 10,000원</p>
-                </li>
-                <li>
-                    <h3>상품2</h3>
-                    <img src="/images/product2.jpg" alt="상품2 이미지">
-                    <p>가격: 20,000원</p>
-                </li>
-                <!-- 10개의 상품 추가 -->
-            </ul>
-        
-            <ul class="products" data-category="electronics">
-                <h2>가전제품</h2>
-                <li>
-                    <h3>상품3</h3>
-                    <img src="/images/product3.jpg" alt="상품3 이미지">
-                    <p>가격: 30,000원</p>
-                </li>
-                <li>
-                    <h3>상품4</h3>
-                    <img src="/images/product4.jpg" alt="상품4 이미지">
-                    <p>가격: 40,000원</p>
-                </li>
-                <!-- 10개의 상품 추가 -->
-            </ul>
-          
-            <ul class="products" data-category="food">
-                <h2>식품</h2>
-                <li>
-                    <h3>식품1</h3>
-                    <img src="/images/product5.jpg" alt="상품5 이미지">
-                    <p>가격: 50,000원</p>
-                </li>
-                <li>
-                    <h3>식품2</h3>
-                    <img src="/images/product6.jpg" alt="상품6 이미지">
-                    <p>가격: 60,000원</p>
-                </li>
-                <li>
-                    <h3>3</h3>
-                    <img src="/images/product5.jpg" alt="상품5 이미지">
-                    <p>가격: 50,000원</p>
-                </li>
-                <li>
-                    <h3>4</h3>
-                    <img src="/images/product6.jpg" alt="상품6 이미지">
-                    <p>가격: 60,000원</p>
-                </li>
-                 <li>
-                    <h3>상품5</h3>
-                    <img src="/images/product5.jpg" alt="상품5 이미지">
-                    <p>가격: 50,000원</p>
-                </li>
-                <li>
-                    <h3>상품6</h3>
-                    <img src="/images/product6.jpg" alt="상품6 이미지">
-                    <p>가격: 60,000원</p>
-                </li>
-                <li>
-                    <h3>상품7</h3>
-                    <img src="/images/product6.jpg" alt="상품6 이미지">
-                    <p>가격: 60,000원</p>
-                </li>
-                <li>
-                    <h3>상품8</h3>
-                    <img src="/images/product6.jpg" alt="상품6 이미지">
-                    <p>가격: 60,000원</p>
-                </li>
-                <li>
-                    <h3>상품9</h3>
-                    <img src="/images/product6.jpg" alt="상품6 이미지">
-                    <p>가격: 60,000원</p>
-                </li>
-                <li>
-                    <h3>상품10</h3>
-                    <img src="/images/product6.jpg" alt="상품6 이미지">
-                    <p>가격: 60,000원</p>
-                </li>
-                <li>
-                    <h3>상품11</h3>
-                    <img src="/images/product6.jpg" alt="상품6 이미지">
-                    <p>가격: 60,000원</p>
-                </li>
-                <!-- 10개의 상품 추가 -->
-            </ul>
-            <nav>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a class="page-link" href="#">이전</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">다음</a></li>
-                </ul>
-            </nav>
-        </section>
-    </main>
-    <script>
-        const categories = document.querySelectorAll('.category');
-        const products = document.querySelectorAll('.products');
+    <div class="container" id="item-container"></div>
+    <div class="pagination" id="pagination"></div>
 
-        categories.forEach(category => {
-            category.addEventListener('click', () => {
-                const selectedCategory = category.dataset.category;
-                products.forEach(product => {
-                    if (product.dataset.category === selectedCategory || selectedCategory === 'all') {
-                        product.style.display = 'block';
-                    } else {
-                        product.style.display = 'none';
-                    }
+    <script>
+        const itemsPerPage = 10; // 페이지당 아이템 수
+        const items = [
+            { name: "item1" },
+            { name: "item2" },
+            { name: "item3" },
+            { name: "item4" },
+            { name: "item5" },
+            { name: "item6" },
+            { name: "item7" },
+            { name: "item8" },
+            { name: "item9" },
+            { name: "item10" },
+            { name: "item11" },
+            { name: "item12" },
+            { name: "item13" },
+            { name: "item14" },
+            { name: "item15" },
+            { name: "item16" },
+            { name: "item17" },
+            { name: "item18" },
+            { name: "item19" },
+            { name: "item20" },
+            { name: "item21" },
+            { name: "item22" },
+            { name: "item23" },
+            { name: "item24" },
+            { name: "item25" },
+            { name: "item26" },
+            { name: "item27" },
+            { name: "item28" },
+            { name: "item29" },
+            { name: "item30" },
+            { name: "item31" },
+            { name: "item32" },
+            { name: "item33" },
+            { name: "item34" },
+            { name: "item35" },
+            { name: "item36" },
+            { name: "item37" },
+            { name: "item38" },
+            { name: "item39" },
+            { name: "item40" },
+            { name: "item41" },
+            { name: "item42" },
+            { name: "item43" },
+            { name: "item44" },
+            { name: "item45" },
+            { name: "item46" },
+            { name: "item47" },
+            { name: "item48" },
+            { name: "item49" },
+            { name: "item50" },
+            { name: "item51" },
+            { name: "item52" },
+            { name: "item53" },
+            { name: "item54" },
+            { name: "item55" },
+            { name: "item56" },
+            { name: "item57" },
+            { name: "item58" },
+            { name: "item59" },
+            { name: "item60" },
+            { name: "item61" },
+            { name: "item62" },
+            { name: "item63" },
+            { name: "item64" },
+            { name: "item65" },
+            { name: "item66" },
+            { name: "item67" },
+            { name: "item68" },
+            { name: "item69" },
+            { name: "item70" },
+            { name: "item71" },
+            { name: "item72" },
+            { name: "item73" },
+            { name: "item74" },
+            { name: "item75" },
+            { name: "item76" },
+            { name: "item77" },
+            { name: "item78" },
+            { name: "item79" },
+            { name: "item80" },
+            { name: "item81" },
+            { name: "item82" },
+            { name: "item83" },
+            { name: "item84" },
+            { name: "item85" },
+            { name: "item86" },
+            { name: "item87" },
+            { name: "item88" },
+            { name: "item89" },
+            { name: "item90" },
+            { name: "item91" },
+            { name: "item92" },
+            { name: "item93" },
+            { name: "item94" },
+            { name: "item95" },
+            { name: "item96" },
+            { name: "item97" },
+            { name: "item98" },
+            { name: "item99" },
+            { name: "item100" }
+        ]; // 아이템 데이터 배열
+
+        function displayItems(items, startIndex, endIndex) {
+            const container = document.getElementById("item-container");
+            container.innerHTML = "";
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const item = items[i];
+                const itemElement = document.createElement("div");
+                itemElement.classList.add("item");
+                itemElement.textContent = item.name; // 아이템 이름을 출력
+                container.appendChild(itemElement);
+            }
+        }
+
+        function displayPagination(totalItems, currentPage) {
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            const pagination = document.getElementById("pagination");
+            pagination.innerHTML = "";
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement("a");
+                pageLink.href = "#";
+                pageLink.classList.add("page-link");
+                pageLink.textContent = i;
+
+                if (i === currentPage) {
+                    pageLink.classList.add("active");
+                }
+
+                pageLink.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    displayItems(items, (i - 1) * itemsPerPage, i * itemsPerPage);
+                    displayPagination(totalItems, i);
                 });
-            });
-        });
+
+                pagination.appendChild(pageLink);
+            }
+        }
+
+        displayItems(items, 0, itemsPerPage);
+        displayPagination(items.length, 1);
     </script>
 </body>
 </html>
