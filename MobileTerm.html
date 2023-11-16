@@ -45,6 +45,18 @@
     </div>
   </article>
 
+
+  <video class="play_mp4" autoplay muted controls autoplay loop>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    
+  </video>
+  <script>
+    const video = document.querySelector('.bg_anime_04');
+    video.addEventListener('ended', function() {
+      video.currentTime = 0;
+      video.play();
+    }, false);
+  </script>
 </body>
 
 </html>
