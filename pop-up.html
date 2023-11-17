@@ -1,144 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>페이징 처리 예제</title>
+    <title>팝업 스토어</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" type="text/css" href="Styles_goods.css">
-   
+    <link rel="stylesheet" type="text/css" href="Styles_pop.css">
 </head>
 <body>
-    <div class="container" id="item-container"></div>
-    <div class="pagination" id="pagination"></div>
-
-    <script>
-        const itemsPerPage = 10; // 페이지당 아이템 수
-        const items = [
-            { name: "item1", price: "1000", image: "image1.jpg" },
-            { name: "item2", price: "2000", image: "image2.jpg" },
-            { name: "item3", price: "3000", image: "image3.jpg" },
-            { name: "item4", price: "4000", image: "image4.jpg" },
-            { name: "item5", price: "5000", image: "image5.jpg" },
-            { name: "item6", price: "6000", image: "image6.jpg" },
-            { name: "item7", price: "7000", image: "image7.jpg" },
-            { name: "item8", price: "8000", image: "image8.jpg" },
-            { name: "item9", price: "9000", image: "image9.jpg" },
-            { name: "item10", price: "10000", image: "image10.jpg" },
-            { name: "item11", price: "11000", image: "image11.jpg" },
-            { name: "item12", price: "12000", image: "image12.jpg" },
-            { name: "item13", price: "13000", image: "image13.jpg" },
-            { name: "item14", price: "14000", image: "image14.jpg" },
-            { name: "item15", price: "15000", image: "image15.jpg" },
-            { name: "item16", price: "16000", image: "image16.jpg" },
-            { name: "item17", price: "17000", image: "image17.jpg" },
-            { name: "item18", price: "18000", image: "image18.jpg" },
-            { name: "item19", price: "19000", image: "image19.jpg" },
-            { name: "item20", price: "20000", image: "image20.jpg" },
-            { name: "item21", price: "21000", image: "image21.jpg" },
-            { name: "item22", price: "22000", image: "image22.jpg" },
-            { name: "item23", price: "23000", image: "image23.jpg" },
-            { name: "item24", price: "24000", image: "image24.jpg" },
-            { name: "item25", price: "25000", image: "image25.jpg" },
-            { name: "item26", price: "26000", image: "image26.jpg" },
-            { name: "item27", price: "27000", image: "image27.jpg" },
-            { name: "item28", price: "28000", image: "image28.jpg" },
-            { name: "item29", price: "29000", image: "image29.jpg" },
-            { name: "item30", price: "30000", image: "image30.jpg" },
-            { name: "item31", price: "31000", image: "image31.jpg" },
-            { name: "item32", price: "32000", image: "image32.jpg" },
-            { name: "item33", price: "33000", image: "image33.jpg" },
-            { name: "item34", price: "34000", image: "image34.jpg" },
-            { name: "item35", price: "35000", image: "image35.jpg" },
-            { name: "item36", price: "36000", image: "image36.jpg" },
-            { name: "item37", price: "37000", image: "image37.jpg" },
-            { name: "item38", price: "38000", image: "image38.jpg" },
-            { name: "item39", price: "39000", image: "image39.jpg" },
-            { name: "item40", price: "40000", image: "image40.jpg" },
-            { name: "item41", price: "41000", image: "image41.jpg" },
-            { name: "item42", price: "42000", image: "image42.jpg" },
-            { name: "item43", price: "43000", image: "image43.jpg" },
-            { name: "item44", price: "44000", image: "image44.jpg" },
-            { name: "item45", price: "45000", image: "image45.jpg" },
-            { name: "item46", price: "46000", image: "image46.jpg" },
-            { name: "item47", price: "47000", image: "image47.jpg" },
-            { name: "item48", price: "48000", image: "image48.jpg" },
-            { name: "item49", price: "49000", image: "image49.jpg" },
-            { name: "item50", price: "50000", image: "image50.jpg" },
-            { name: "item51", price: "51000", image: "image51.jpg" },
-            { name: "item52", price: "52000", image: "image52.jpg" },
-            { name: "item53", price: "53000", image: "image53.jpg" },
-            { name: "item54", price: "54000", image: "image54.jpg" },
-            { name: "item55", price: "55000", image: "image55.jpg" },
-            { name: "item56", price: "56000", image: "image56.jpg" },
-            { name: "item57", price: "57000", image: "image57.jpg" },
-            { name: "item58", price: "58000", image: "image58.jpg" },
-            { name: "item59", price: "59000", image: "image59.jpg" },
-            { name: "item60", price: "60000", image: "image60.jpg" },
-            { name: "item61", price: "61000", image: "image61.jpg" },
-            { name: "item62", price: "62000", image: "image62.jpg" },
-            { name: "item63", price: "63000", image: "image63.jpg" },
-            { name: "item64", price: "64000", image: "image64.jpg" },
-            { name: "item65", price: "65000", image: "image65.jpg" },
-            { name: "item66", price: "66000", image: "image66.jpg" },
-            { name: "item67", price: "67000", image: "image67.jpg" },
-            { name: "item68", price: "68000", image: "image68.jpg" },
-            { name: "item69", price: "69000", image: "image69.jpg" },
+    <header class="header">
+        <nav>
+          <div class="nav pc_display">
+            <div class="nav_item">
+                <a href="https://www.shinchan-app.jp/30th-anniv-anime/" target="_blank" rel="noopener">
+                    <img src="https://www.shinchan-app.jp/30th-anniv-anime/wonderland/img/logo_30th.svg" alt="『쿠키런』 출시 10주년" class="nav-logo-th">
+                </a>
+            </div>
+    
+            <div class="nav_item"><a class="nav_link" href="#top">
+                <img src="https://i.namu.wiki/i/8mqn9mxiD8cVJeA-krMXlYbRiT6UAZqiFg-jUTljcfCb7jIuHmAXdZAabHJO7Mkt6FMyQrovWlJ4_FAhiJv-zQ.webp" alt="메뉴"
+                class="nav-logo"></a>
+            </div>
+    
+            <div class="nav_link_item pc_display"><a class="nav_link" href="highlight.html">history</a></div>
+            <div class="nav_link_item pc_display"><a class="nav_link" href="about.html">개최 개요</a></div>
+            <div class="nav_link_item pc_display"><a class="nav_link" href="event.html">이벤트 정보</a></div>
+            <div class="nav_link_item pc_display"><a class="nav_link" href="pop-up.html">pop-up store</a></div>
+            <div class="nav_link_item pc_display"><a class="nav_link" href="goods.html">store</a></div>
+            <!--<div class="nav_link_item pc_display"><a class="nav_link" href="#contact">お問い合わせ</a></div>-->
           
-        ];
-
-
-    function displayItems(items, startIndex, endIndex) {
-    const container = document.getElementById("item-container");
-    container.innerHTML = "";
-
-    for (let i = startIndex; i < endIndex; i++) {
-        const item = items[i];
-        const itemElement = document.createElement("div");
-        itemElement.classList.add("item");
-
-        // 이미지 엘리먼트 생성 및 추가
-        const imageElement = document.createElement("img");
-        imageElement.src = item.image;
-        itemElement.appendChild(imageElement);
-
-        // 아이템 이름을 출력
-        const nameElement = document.createElement("p");
-        nameElement.textContent = item.name;
-        itemElement.appendChild(nameElement);
-
-        container.appendChild(itemElement);
-    }
-}
-
-
-        function displayPagination(totalItems, currentPage) {
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            const pagination = document.getElementById("pagination");
-            pagination.innerHTML = "";
-
-            for (let i = 1; i <= totalPages; i++) {
-                const pageLink = document.createElement("a");
-                pageLink.href = "#";
-                pageLink.classList.add("page-link");
-                pageLink.textContent = i;
-
-                if (i === currentPage) {
-                    pageLink.classList.add("active");
-                }
-
-                pageLink.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    displayItems(items, (i - 1) * itemsPerPage, i * itemsPerPage);
-                    displayPagination(totalItems, i);
-                });
-
-                pagination.appendChild(pageLink);
-            }
-        }
-
-        displayItems(items, 0, itemsPerPage);
-        displayPagination(items.length, 1);
+          </div>
+        </nav>
+    <div class="content01">
+        <div class="content01_item">
+            <table>
+                <tr>
+                    <td rowspan="4"><img src="https://pbs.twimg.com/media/DcJzzSSVAAAn7cR.jpg:large" alt="쿠키런"></td>
+                    <td>행사명</td>
+                    <td>쿠키런 팝업 스토어</td>
+                </tr>
+                <tr>
+                    <td>기간</td>
+                    <td>2022년 1월 1일 ~ 2022년 1월 31일</td>
+                </tr>
+                <tr>
+                    <td>입장 시간</td>
+                    <td>10:00 ~ 20:00</td>
+                </tr>
+                <tr>
+                    <td>비용</td>
+                    <td>무료</td>
+                </tr>
+            </table>
+    
         
-    </script>
+            <table>
+                <tr>
+                    <td rowspan="4"><img src="https://image.zdnet.co.kr/2018/05/04/firstblood_sgAvztq62.jpg" alt="쿠키런"></td>
+                    <td>행사명</td>
+                    <td>쿠키런 팝업 스토어</td>
+                </tr>
+                <tr>
+                    <td>기간</td>
+                    <td>2022년 1월 1일 ~ 2022년 1월 31일</td>
+                </tr>
+                <tr>
+                    <td>입장 시간</td>
+                    <td>10:00 ~ 20:00</td>
+                </tr>
+                <tr>
+                    <td>비용</td>
+                    <td>무료</td>
+                </tr>
+            </table>
+        </div>
+         
+                
+    </div>
 </body>
 </html>

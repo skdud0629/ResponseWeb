@@ -1,0 +1,40 @@
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1000;
+}
+
+
+img {
+    max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
+    height: auto; /* 가로 세로 비율 유지 */
+    
+}
+
+.nav {
+    position: relative;
+    width: 98%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.nav-logo-th{
+    width: 70px;
+    height: 100%;
+    margin-right: 20px;
+    
+}
+
+.nav-logo {
+    width: 200px;
+    height: 100%;
+    margin-right: 20px;
+    
+}

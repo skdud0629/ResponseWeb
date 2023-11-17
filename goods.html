@@ -12,9 +12,9 @@
     <div class="pagination" id="pagination"></div>
 
     <script>
-        const itemsPerPage = 10; // 페이지당 아이템 수
+        const itemsPerPage = 24; // 페이지당 아이템 수
         const items = [
-            { name: "item1", price: "1000", image: "image1.jpg" },
+            { name: "item1", price: "1000", image: "https://shop-phinf.pstatic.net/20230406_139/1680774590675RTw80_JPEG/81910424444651228_173986660.jpg?type=f750_750" },
             { name: "item2", price: "2000", image: "image2.jpg" },
             { name: "item3", price: "3000", image: "image3.jpg" },
             { name: "item4", price: "4000", image: "image4.jpg" },
@@ -105,20 +105,36 @@
 
     for (let i = startIndex; i < endIndex; i++) {
         const item = items[i];
-        const itemElement = document.createElement("div");
-        itemElement.classList.add("item");
+                const itemElement = document.createElement("div");
+                itemElement.classList.add("popup-item");
 
-        // 이미지 엘리먼트 생성 및 추가
-        const imageElement = document.createElement("img");
-        imageElement.src = item.image;
-        itemElement.appendChild(imageElement);
+                // 이미지 엘리먼트 생성 및 추가
+                const imageElement = document.createElement("img");
+                imageElement.src = item.image;
+                itemElement.appendChild(imageElement);
 
-        // 아이템 이름을 출력
-        const nameElement = document.createElement("p");
-        nameElement.textContent = item.name;
-        itemElement.appendChild(nameElement);
+                // 아이템 정보 엘리먼트 생성 및 추가
+                const itemInfoElement = document.createElement("div");
+                itemInfoElement.classList.add("popup-item-info");
 
-        container.appendChild(itemElement);
+                const nameElement = document.createElement("div");
+                nameElement.classList.add("popup-item-name");
+                nameElement.textContent = item.name;
+                itemInfoElement.appendChild(nameElement);
+
+                const dateElement = document.createElement("div");
+                dateElement.classList.add("popup-item-price");
+                dateElement.textContent = item.price;
+                itemInfoElement.appendChild(dateElement);
+
+                const descElement = document.createElement("div");
+                descElement.classList.add("popup-item-desc");
+                descElement.textContent = item.desc;
+                itemInfoElement.appendChild(descElement);
+
+                itemElement.appendChild(itemInfoElement);
+
+                container.appendChild(itemElement);
     }
 }
 

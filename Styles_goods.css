@@ -35,3 +35,50 @@
     font-weight: bold;
     color: #f00;
 }
+
+
+/* Path: Styles_goods.css */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.popup-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.popup-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-item-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.popup-item-date {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.popup-item-desc {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
