@@ -1,10 +1,23 @@
-
 .header {
     position: fixed;
     top: 0;
+    width: 150%;
+    background-color: rgba(156, 111, 27, 0.74) ;
+    z-index: 1;
+}
+
+
+
+.main_visual {
+    position: relative;
     width: 100%;
-    background-color: #ffffff;
-    z-index: 1000;
+    padding-bottom: 40%;
+    background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
+    background-clip: border-box;
+    background-position: top center;
+    background-size: 100% 100%; /* 이미지를 화면에 꽉 차게 설정 */
+    background-repeat: no-repeat;
+    padding-top: 30%;
 }
 
 
@@ -38,3 +51,102 @@ img {
     margin-right: 20px;
     
 }
+
+
+
+/*추가*/
+.content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* 추가 */
+    background-color: #fff;
+    padding: 6%;
+    border-radius: 20px;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+    text-align: center; /* 추가 */
+}
+
+.Label {
+    padding: 1em;
+    margin-bottom: 0.3rem;
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+}
+
+.border_about {
+    border: rgba(202, 138, 0, 0.671) solid 6px;
+    box-sizing: border-box; /* 추가 */
+}
+
+.border_about:hover {
+    border: rgba(202, 138, 0, 0.671) solid 6px;
+    box-sizing: border-box; /* 추가 */
+   /*animation: fuwafuwa-2 1s ease-in-out infinite alternate;   */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1000;
+}
+
+/* .play_mp4 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+} */
+
+img {
+    max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
+    height: auto; /* 가로 세로 비율 유지 */
+}
+
+.nav {
+    position: relative;
+    width: 98%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-logo-th{
+    width: 70px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.nav-logo {
+    width: 200px;
+    height: 100%;
+    margin-right: 20px;
+}
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+.start_mp4 {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh; /* 화면의 높이에 맞게 조절 */
+  }
+
+.about_area {
+    text-align: center;
+}
+
