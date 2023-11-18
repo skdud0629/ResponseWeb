@@ -1,3 +1,4 @@
+
 .header {
     position: fixed;
     top: 0;
@@ -5,26 +6,19 @@
     background-color: rgba(156, 111, 27, 0.74) ;
     z-index: 1;
 }
-
-
-
-.main_visual {
-    position: relative;
-    width: 100%;
-    padding-bottom: 40%;
-    background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
-    background-clip: border-box;
-    background-position: top center;
-    background-size: 100% 100%; /* 이미지를 화면에 꽉 차게 설정 */
-    background-repeat: no-repeat;
-    padding-top: 30%;
+.nav_link {
+    display: inline-block;
+    margin-right: 10px; /* 간격 조절 */
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
-
 
 img {
     max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
     height: auto; /* 가로 세로 비율 유지 */
-    
 }
 
 .nav {
@@ -38,20 +32,61 @@ img {
 }
 
 
-.nav-logo-th{
-    width: 70px;
-    height: 100%;
-    margin-right: 20px;
-    
+body {
+    background-image: url(https://i.pinimg.com/originals/20/59/47/2059474b9a44c2409e2f6abb63efabfc.jpg);
+    background-size: 100% 100%;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-logo {
-    width: 200px;
-    height: 100%;
-    margin-right: 20px;
-    
+.main_visual {
+    position: relative;
+    width: 100%;
+    padding-bottom: 40%;
+    background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
+    background-clip: border-box;
+    background-position: top center;
+    background-size: 100% 80%; /* 이미지를 화면에 꽉 차게 설정 */
+    background-repeat: no-repeat;
+    padding-top: 30%;
 }
 
+
+body {
+    background-image: url(https://i.pinimg.com/originals/20/59/47/2059474b9a44c2409e2f6abb63efabfc.jpg);
+    background-size: 100% 100%;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 150%;
+    background-color: rgba(156, 111, 27, 0.74) ;
+    z-index: 1;
+}
+
+.main_visual {
+    position: relative;
+    width: 100%;
+    padding-bottom: 40%;
+    background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
+    background-clip: border-box;
+    background-position: top center;
+    background-size: 100% 100%; /* 이미지를 화면에 꽉 차게 설정 */
+    background-repeat: no-repeat;
+    padding-top: 30%;
+}
+
+img {
+    max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
+    height: auto; /* 가로 세로 비율 유지 */
+    
+}
 
 
 /*추가*/
@@ -89,47 +124,23 @@ img {
    /*animation: fuwafuwa-2 1s ease-in-out infinite alternate;   */
 }
 
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #ffffff;
-    z-index: 1000;
-}
-
-/* .play_mp4 {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-} */
 
 img {
     max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
     height: auto; /* 가로 세로 비율 유지 */
 }
-
-.nav {
-    position: relative;
-    width: 98%;
-    height: 80px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
 .nav-logo-th{
     width: 70px;
     height: 100%;
     margin-right: 20px;
+    
 }
 
 .nav-logo {
     width: 200px;
     height: 100%;
     margin-right: 20px;
+    
 }
 .container {
     position: relative;
