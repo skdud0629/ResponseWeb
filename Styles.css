@@ -7,6 +7,18 @@
 }
 
 
+
+
+.nav_link {
+    display: inline-block;
+    margin-right: 10px; /* 간격 조절 */
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
 img {
     max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
     height: auto; /* 가로 세로 비율 유지 */
@@ -48,6 +60,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .main_visual {
     position: relative;
     width: 100%;
