@@ -1,9 +1,8 @@
-
 .header {
     position: fixed;
     top: 0;
     width: 150%;
-    background-color: rgba(156, 111, 27, 0.74) ;
+    background-color: rgba(255, 255, 255, 0.74) ;
     z-index: 1;
 }
 .nav_link {
@@ -33,7 +32,7 @@ img {
 
 
 body {
-    background-image: url(https://i.pinimg.com/originals/20/59/47/2059474b9a44c2409e2f6abb63efabfc.jpg);
+    background-image: url(https://file.thisisgame.com/upload/nboard/news/2018/10/16/20181016170715_6652.jpg);
     background-size: 100% 100%;
     line-height: 1.5;
     margin: 0;
@@ -41,45 +40,18 @@ body {
 }
 
 .main_visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
-    padding-bottom: 40%;
+    height: 100vh; /* 화면 높이의 100%로 설정하여 수직 가운데 정렬 */
     background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
     background-clip: border-box;
     background-position: top center;
-    background-size: 100% 80%; /* 이미지를 화면에 꽉 차게 설정 */
+    background-size: cover; /* 이미지를 화면에 꽉 차게 설정, 비율 유지 */
     background-repeat: no-repeat;
-    padding-top: 30%;
-}
-
-
-body {
-    background-image: url(https://i.pinimg.com/originals/20/59/47/2059474b9a44c2409e2f6abb63efabfc.jpg);
-    background-size: 100% 100%;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-}
-
-
-.header {
-    position: fixed;
-    top: 0;
-    width: 150%;
-    background-color: rgba(156, 111, 27, 0.74) ;
-    z-index: 1;
-}
-
-.main_visual {
-    position: relative;
-    width: 100%;
-    padding-bottom: 40%;
-    background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
-    background-clip: border-box;
-    background-position: top center;
-    background-size: 100% 100%; /* 이미지를 화면에 꽉 차게 설정 */
-    background-repeat: no-repeat;
-    padding-top: 30%;
+    text-align: center;
 }
 
 img {
@@ -95,7 +67,7 @@ img {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto; /* 추가 */
-    background-color: #fff;
+    background-color: #ffffff9f;
     padding: 6%;
     border-radius: 20px;
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
@@ -112,18 +84,6 @@ img {
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
     border-radius: 16px;
 }
-
-.border_about {
-    border: rgba(202, 138, 0, 0.671) solid 6px;
-    box-sizing: border-box; /* 추가 */
-}
-
-.border_about:hover {
-    border: rgba(202, 138, 0, 0.671) solid 6px;
-    box-sizing: border-box; /* 추가 */
-   /*animation: fuwafuwa-2 1s ease-in-out infinite alternate;   */
-}
-
 
 img {
     max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
@@ -161,3 +121,39 @@ img {
     text-align: center;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+.footer{
+    position: relative;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.795);
+    z-index: 1000;
+}
+
+.footer_item01{
+    width: 20%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer_item02{
+    width: 5%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    display: block;
+    margin: 0 auto;
+}
+
+.footer_tag{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    display: block;
+    text-align: center; /* 가운데 정렬 추가 */
+}
