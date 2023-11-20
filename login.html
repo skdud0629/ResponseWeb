@@ -20,7 +20,7 @@
         <input type="password" id="password" name="password" placeholder="비밀번호">
       </div>
       <div class="form-group">
-        <button type="submit">Login</button>
+        <button type="submit">로그인</button>
       </div>
     </form>
   </div>
@@ -35,9 +35,9 @@
       var password = document.getElementById("password").value;
 
       // 로컬 DB의 정보와 비교
-      if (username === "사용자명" && password === "비밀번호") {
+      if (username === "1" && password === "1") {
         // 로그인 성공 시 상점 페이지로 이동
-        window.location.href = "상점페이지.html";
+        window.location.href = "store.html";
       } else {
         // 로그인 실패 시 경고 메시지 출력
         alert("아이디 또는 비밀번호가 일치하지 않습니다.");

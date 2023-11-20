@@ -1,3 +1,8 @@
+body{
+ 
+    font-family: Arial, sans-serif;
+    background-size: cover;
+}
 
 .container {
     display: flex;
@@ -35,7 +40,6 @@
     font-weight: bold;
     color: #f00;
 }
-
 
 /* Path: Styles_goods.css */
 .container {
@@ -81,4 +85,18 @@
 .popup-item-desc {
     font-size: 14px;
     margin-bottom: 5px;
+}
+
+/* Add the following code to center align the header image */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+    text-align: center;
+    
+}
+.find_item{
+    text-align: right;
 }

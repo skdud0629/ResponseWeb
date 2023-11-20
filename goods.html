@@ -1,110 +1,88 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>페이징 처리 예제</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Styles_goods.css">
-   
+
 </head>
+
 <body>
+    <div class="header">
+        <div class="link_item">
+            <a class="nav_link" href="login.html">로그인</a>
+            <a class="nav_link" href="mypage.html">내정보</a>
+        </div>
+      
+        <h1 class="logo"><a href="/cookierun" class="_2yPVRArtDH N=a:GNB.storehome"><img
+                    src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
+                    data-src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
+                    class="_1QhZSUVBeK" alt="쿠키런스토어"></a></h1>
+        <div class="find_item">
+            <div class="search"><input type="text" title="검색어 입력" placeholder="검색어를 입력해보세요" value="" class="_38DpYZHzTy"
+                    maxlength="500"><button class="_1H_iy_tmiI N=a:GNB.search"><span class="Y4Wg6LWa6z"><span
+                            class="blind">검색하기</span></span></button></div>
+            <button onclick="filterItems('')">전체</button>
+            <button onclick="filterItems('clothes')">의상</button>
+            <button onclick="filterItems('electronics')">전자제품</button>
+            <button onclick="filterItems('food')">음식</button>
+        </div>
+
+    </div>
     <div class="container" id="item-container"></div>
     <div class="pagination" id="pagination"></div>
+
+
+ 
 
     <script>
         const itemsPerPage = 24; // 페이지당 아이템 수
         const items = [
-            { name: "item1", price: "1000", image: "https://shop-phinf.pstatic.net/20230406_139/1680774590675RTw80_JPEG/81910424444651228_173986660.jpg?type=f750_750" },
-            { name: "item2", price: "2000", image: "image2.jpg" },
-            { name: "item3", price: "3000", image: "image3.jpg" },
-            { name: "item4", price: "4000", image: "image4.jpg" },
-            { name: "item5", price: "5000", image: "image5.jpg" },
-            { name: "item6", price: "6000", image: "image6.jpg" },
-            { name: "item7", price: "7000", image: "image7.jpg" },
-            { name: "item8", price: "8000", image: "image8.jpg" },
-            { name: "item9", price: "9000", image: "image9.jpg" },
-            { name: "item10", price: "10000", image: "image10.jpg" },
-            { name: "item11", price: "11000", image: "image11.jpg" },
-            { name: "item12", price: "12000", image: "image12.jpg" },
-            { name: "item13", price: "13000", image: "image13.jpg" },
-            { name: "item14", price: "14000", image: "image14.jpg" },
-            { name: "item15", price: "15000", image: "image15.jpg" },
-            { name: "item16", price: "16000", image: "image16.jpg" },
-            { name: "item17", price: "17000", image: "image17.jpg" },
-            { name: "item18", price: "18000", image: "image18.jpg" },
-            { name: "item19", price: "19000", image: "image19.jpg" },
-            { name: "item20", price: "20000", image: "image20.jpg" },
-            { name: "item21", price: "21000", image: "image21.jpg" },
-            { name: "item22", price: "22000", image: "image22.jpg" },
-            { name: "item23", price: "23000", image: "image23.jpg" },
-            { name: "item24", price: "24000", image: "image24.jpg" },
-            { name: "item25", price: "25000", image: "image25.jpg" },
-            { name: "item26", price: "26000", image: "image26.jpg" },
-            { name: "item27", price: "27000", image: "image27.jpg" },
-            { name: "item28", price: "28000", image: "image28.jpg" },
-            { name: "item29", price: "29000", image: "image29.jpg" },
-            { name: "item30", price: "30000", image: "image30.jpg" },
-            { name: "item31", price: "31000", image: "image31.jpg" },
-            { name: "item32", price: "32000", image: "image32.jpg" },
-            { name: "item33", price: "33000", image: "image33.jpg" },
-            { name: "item34", price: "34000", image: "image34.jpg" },
-            { name: "item35", price: "35000", image: "image35.jpg" },
-            { name: "item36", price: "36000", image: "image36.jpg" },
-            { name: "item37", price: "37000", image: "image37.jpg" },
-            { name: "item38", price: "38000", image: "image38.jpg" },
-            { name: "item39", price: "39000", image: "image39.jpg" },
-            { name: "item40", price: "40000", image: "image40.jpg" },
-            { name: "item41", price: "41000", image: "image41.jpg" },
-            { name: "item42", price: "42000", image: "image42.jpg" },
-            { name: "item43", price: "43000", image: "image43.jpg" },
-            { name: "item44", price: "44000", image: "image44.jpg" },
-            { name: "item45", price: "45000", image: "image45.jpg" },
-            { name: "item46", price: "46000", image: "image46.jpg" },
-            { name: "item47", price: "47000", image: "image47.jpg" },
-            { name: "item48", price: "48000", image: "image48.jpg" },
-            { name: "item49", price: "49000", image: "image49.jpg" },
-            { name: "item50", price: "50000", image: "image50.jpg" },
-            { name: "item51", price: "51000", image: "image51.jpg" },
-            { name: "item52", price: "52000", image: "image52.jpg" },
-            { name: "item53", price: "53000", image: "image53.jpg" },
-            { name: "item54", price: "54000", image: "image54.jpg" },
-            { name: "item55", price: "55000", image: "image55.jpg" },
-            { name: "item56", price: "56000", image: "image56.jpg" },
-            { name: "item57", price: "57000", image: "image57.jpg" },
-            { name: "item58", price: "58000", image: "image58.jpg" },
-            { name: "item59", price: "59000", image: "image59.jpg" },
-            { name: "item60", price: "60000", image: "image60.jpg" },
-            { name: "item61", price: "61000", image: "image61.jpg" },
-            { name: "item62", price: "62000", image: "image62.jpg" },
-            { name: "item63", price: "63000", image: "image63.jpg" },
-            { name: "item64", price: "64000", image: "image64.jpg" },
-            { name: "item65", price: "65000", image: "image65.jpg" },
-            { name: "item66", price: "66000", image: "image66.jpg" },
-            { name: "item67", price: "67000", image: "image67.jpg" },
-            { name: "item68", price: "68000", image: "image68.jpg" },
-            { name: "item69", price: "69000", image: "image69.jpg" },
-            { name: "item70", price: "70000", image: "image70.jpg" },
-            { name: "item71", price: "71000", image: "image71.jpg" },
-            { name: "item72", price: "72000", image: "image72.jpg" },
-            { name: "item73", price: "73000", image: "image73.jpg" },
-            { name: "item74", price: "74000", image: "image74.jpg" },
-            { name: "item75", price: "75000", image: "image75.jpg" },
-            { name: "item76", price: "76000", image: "image76.jpg" },
-            { name: "item77", price: "77000", image: "image77.jpg" },
-            { name: "item78", price: "78000", image: "image78.jpg" },
-            { name: "item79", price: "79000", image: "image79.jpg" },
-            { name: "item80", price: "80000", image: "image80.jpg" },
-            { name: "item81", price: "81000", image: "image81.jpg" },
-            { name: "item82", price: "82000", image: "image82.jpg" }
+            { name: "item1", price: "1000", image: "https://shop-phinf.pstatic.net/20230406_139/1680774590675RTw80_JPEG/81910424444651228_173986660.jpg?type=f750_750", category: "clothes" },
+            { name: "item2", price: "2000", image: "image2.jpg", category: "clothes" },
+            // 나머지 아이템들도 category 속성 추가
+
+            { name: "item51", price: "51000", image: "image51.jpg", category: "electronics" },
+            { name: "item52", price: "52000", image: "image52.jpg", category: "electronics" },
+            // 나머지 아이템들도 category 속성 추가
+
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item51", price: "51000", image: "image51.jpg", category: "electronics" },
+            { name: "item52", price: "52000", image: "image52.jpg", category: "electronics" },
+            // 나머지 아이템들도 category 속성 추가
+
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
+            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
+            { name: "item82", price: "82000", image: "image82.jpg", category: "food" }
         ];
 
 
-    function displayItems(items, startIndex, endIndex) {
-    const container = document.getElementById("item-container");
-    container.innerHTML = "";
+        function displayItems(items, startIndex, endIndex) {
+            const container = document.getElementById("item-container");
+            container.innerHTML = "";
 
-    for (let i = startIndex; i < endIndex; i++) {
-        const item = items[i];
+            for (let i = startIndex; i < endIndex; i++) {
+                const item = items[i];
                 const itemElement = document.createElement("div");
                 itemElement.classList.add("popup-item");
 
@@ -135,8 +113,8 @@
                 itemElement.appendChild(itemInfoElement);
 
                 container.appendChild(itemElement);
-    }
-}
+            }
+        }
 
 
         function displayPagination(totalItems, currentPage) {
@@ -164,9 +142,31 @@
             }
         }
 
+        function filterItems(category) {
+            let filteredItems;
+
+            // 선택된 카테고리의 아이템만 필터링
+            if (category === '') {
+                filteredItems = items;
+            } else {
+                filteredItems = items.filter(item => item.category === category);
+            }
+
+            // 필터링된 아이템을 첫 페이지에 표시
+            displayItems(filteredItems, 0, itemsPerPage);
+
+            // 필터링된 아이템에 대한 페이징 표시
+            displayPagination(filteredItems.length, 1);
+        }
+
+        // 초기 페이지 로드 시 전체 아이템 표시
+        filterItems('');
+
+
         displayItems(items, 0, itemsPerPage);
         displayPagination(items.length, 1);
-        
+
     </script>
 </body>
+
 </html>
