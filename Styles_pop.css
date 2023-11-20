@@ -102,14 +102,6 @@ img {
     margin-right: 20px;
     
 }
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
 
 .start_mp4 {
     object-fit: cover;

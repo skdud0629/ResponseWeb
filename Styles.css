@@ -62,18 +62,28 @@ body {
 }
 
 .main_visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
-    padding-bottom: 40%;
+    height: 100vh; /* 화면 높이의 100%로 설정하여 수직 가운데 정렬 */
     background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
     background-clip: border-box;
     background-position: top center;
-    background-size: 100% 80%; /* 이미지를 화면에 꽉 차게 설정 */
+    background-size: cover; /* 이미지를 화면에 꽉 차게 설정, 비율 유지 */
     background-repeat: no-repeat;
-    padding-top: 30%;
+    text-align: center;
+}
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
-  
+
 .bg_anime_04 {
     position: absolute;
     width: 14%;
