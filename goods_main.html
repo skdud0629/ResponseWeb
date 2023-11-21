@@ -2,36 +2,121 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>쇼핑몰 메인 화면</title>
+    <title>쇼핑몰 메인 화면</title>
     <meta charset="UTF-8">
     <title>쿠키런 킹덤</title>
-    <link rel="stylesheet" type="text/css" href="Styles_goods.css">
+    <link rel="stylesheet" type="text/css" href="Styles_goods_main.css">
 </head>
+
 <body>
+    
+    <div class="header">
+        <div class="link_item">
+            <p id="userId" style="display:none"></p>
+            <a class="nav_link" href="login.html" onclick="login()">로그인</a>
+            <a class="nav_link" href="mypage.html" style="display:none" id="myPageLink">내정보</a>
+            <p id="userId" style="display:none"></p>
+        </div>
+
+        <h1 class="logo"><a href="/cookierun" class="_2yPVRArtDH N=a:GNB.storehome"><img
+                    src="https://shop-phinf.pstatic.net/20231120_223/1700461846809Iq8iG_PNG/CRO_Logo_ENG2.png"
+                    data-src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
+                    class="_1QhZSUVBeK" alt="쿠키런스토어"></a></h1>
+        <div class="find_item">
+            <div class="search"><input type="text" title="검색어 입력" placeholder="검색어를 입력해보세요" value="" class="_38DpYZHzTy"
+                    maxlength="500"><button class="_1H_iy_tmiI N=a:GNB.search"><span class="Y4Wg6LWa6z"><span
+                            class="blind">검색하기</span></span></button></div>
+        </div>
+        <div>
+            <a class="nav_link" href="#goods.html">더보기</a>
+        </div>
+
+    </div>
+
     <span class="slideshow-container">
         <div class="Slidesbackground">
-           <div class="mySlides fade">
-           <img src="https://pbs.twimg.com/media/FQRQRM5aIAImb-e.jpg:large" class="slideshow-image">
-           </div>
-           <div class="mySlides fade">
-               <img src="https://image.zdnet.co.kr/2021/06/09/6b1771823ad56aaf1e00800d3a27b5d4.png" class="slideshow-image">
-           </div>
-           <div class="mySlides fade">
-               <img src="https://cdn.gamemeca.com/data_center/214/110/20200612183830.jpg" class="slideshow-image">
-           </div>
-           <div class="mySlides fade">
-               <img src="https://images.unsplash.com/photo-1527526029430-319f10814151?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" class="slideshow-image">
-           </div>
-           <div class="mySlides fade">
-               <img src="https://images.unsplash.com/photo-1600077029182-92ac8906f9a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" class="slideshow-image">
-           </div>
-           <div class="mySlides fade">
-               <img src="https://cdn.cnn.com/cnnnext/dam/assets/201030094143-stock-rhodesian-ridgeback-super-tease.jpg" class="slideshow-image">
-           </div>
-       </div>
+            <div class="mySlides fade">
+                <img src="https://pbs.twimg.com/media/FQRQRM5aIAImb-e.jpg:large" class="slideshow-image">
+            </div>
+            <div class="mySlides fade">
+                <img src="https://i.ytimg.com/vi/LgJPgWYGPQ0/maxresdefault.jpg" class="slideshow-image">
+            </div>
+            <div class="mySlides fade">
+                <img src="https://cdn.gamemeca.com/data_center/214/110/20200612183830.jpg" class="slideshow-image">
+            </div>
+            <div class="mySlides fade">
+                <img src="https://i.ytimg.com/vi/uOWaoy7f2uQ/maxresdefault.jpg" class="slideshow-image">
+            </div>
+
+        </div>
     </span>
-   
+    <hr>
+
+    <div class="show_items">
+
+      <!-- <img src="C:\Users\nazero\Desktop\ResponseWeb\item_keychain.jpg" class="slideshow-image">-->
+        <h1 class="best_items"> 베스트 상품</h1>
+      
+        <!-- Add four buttons -->
+        <button
+            onclick="changeImage('item_toy.jpg', 'item_bear.jpg', 'item_blanket.jpg', 'item_bag.jpg')">실시간</button>
+        <button onclick="changeImage('item_card.jpg', 'item_sticker.jpg', 'item_bear.jpg', 'item_cup.jpg')">일간</button>
+        <button onclick="changeImage('item_bear.jpg', 'item_bag.jpg', 'item_cup.jpg', 'item_sticker.jpg')">주간</button>
+        <button onclick="changeImage('item_blanket.jpg', 'item_sticker.jpg', 'item_toy.jpg', 'item_bear.jpg')">월간</button>
+
+        <div class="product-container">
+            <div class="product">
+                <img id="product-image1" src="C:\Users\nazero\Desktop\ResponseWeb\item_toy.jpg" alt="Product 1">
+                <p class="product-name">Product 1</p>
+                <p class="product-price">$10.99</p>
+            </div>
+            <div class="product">
+                <img id="product-image2" src="C:\Users\nazero\Desktop\ResponseWeb\item_bear.jpg" alt="Product 2">
+                <p class="product-name">Product 2</p>
+                <p class="product-price">$19.99</p>
+            </div>
+            <div class="product">
+                <img id="product-image3" src="C:\Users\nazero\Desktop\ResponseWeb\item_blanket.jpg" alt="Product 3">
+                <p class="product-name">Product 3</p>
+                <p class="product-price">$14.99</p>
+            </div>
+            <div class="product">
+                <img id="product-image4" src="C:\Users\nazero\Desktop\ResponseWeb\item_bag.jpg" alt="Product 4">
+                <p class="product-name">Product 4</p>
+                <p class="product-price">$24.99</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer">
+            <br>
+            <div class="footer_item01">
+                <a href="https://www.facebook.com/cookie.run/" target="_blank" rel="noopener">
+                    <img src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
+                        alt="로고">
+                </a>
+            </div>
+            <br>
+            <div class="footer_item02">
+                <a href="https://www.shinchan-app.jp/30th-anniv-anime/" target="_blank" rel="noopener">
+                    <img src="https://www.shinchan-app.jp/30th-anniv-anime/wonderland/img/logo_30th.svg"
+                        alt="『쿠키런』 출시 10주년" class="nav-logo-th"></a>
+            </div>
+            <br>
+            <div class="footer_tag">
+                <p> © 2021136111. JANG NA YOUNG</p>
+                <p> © 2021 DEVSISTERS Corp. All rights reserved.</p>
+                <p> © 2021 SHIN-EI ANIMATION CO., LTD. ALL RIGHTS RESERVED.</p>
+                <br>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 <script>
     var slideIndex = 0;
@@ -40,7 +125,7 @@
     function showSlides() {
         var i;
         var slides = document.getElementsByClassName("mySlides");
-       
+
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
@@ -49,19 +134,23 @@
             slideIndex = 1
         }
         slides[slideIndex - 1].style.display = "block";
-    
-        setTimeout(showSlides, 2000); // 2초마다 이미지가 체인지됩니다
-    }
-</script>
-<!-- 이미지가 흐려지는 효과를 주기 위한 스타일 -->
-<style>
-    .mySlides {
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
+
+        setTimeout(showSlides, 2000); // 2초마다 이미지가 바뀜
     }
 
-    .mySlides.fade {
-        opacity: 1;
+
+    function changeImage(imageUrl1, imageUrl2, imageUrl3, imageUrl4) {
+        var productImage1 = document.getElementById("product-image1");
+        var productImage2 = document.getElementById("product-image2");
+        var productImage3 = document.getElementById("product-image3");
+        var productImage4 = document.getElementById("product-image4");
+
+        productImage1.src = imageUrl1;
+        productImage2.src = imageUrl2;
+        productImage3.src = imageUrl3;
+        productImage4.src = imageUrl4;
     }
-</style>
+
+</script>
+
 </html>

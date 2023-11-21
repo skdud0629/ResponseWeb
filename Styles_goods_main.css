@@ -1,3 +1,8 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .Slidesbackground {
     margin: 0;
     padding: 0;
@@ -8,15 +13,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-}
-.mySlides {
-    border-radius:3%;
-    width: 600px;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
 }
 
 .slideshow-container {
@@ -39,3 +35,61 @@
         opacity: 1
     }
 }
+.footer{
+    position: relative;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.795);
+    z-index: 1000;
+}
+
+.footer_item01 {
+    width: 20%;
+    height: 100%;
+    object-fit: cover; /* 또는 contain 등을 사용하여 조절 */
+    display: block;
+    margin: 0 auto;
+}
+
+
+.footer_item02{
+    width: 5%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    display: block;
+    margin: 0 auto;
+}
+
+.footer_tag{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    display: block;
+    text-align: center; /* 가운데 정렬 추가 */
+}
+.mySlides {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.mySlides.fade {
+    opacity: 1;
+}
+
+.slideshow-image {
+    width: 100%;
+    height: 500px;
+}
+
+img {
+    max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
+    height: auto; /* 가로 세로 비율 유지 */
+}
+.nav-logo-th{
+    width: 70px;
+    height: 100%;
+    margin-right: 20px;
+    
+}
+
