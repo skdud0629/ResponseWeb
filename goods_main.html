@@ -1,0 +1,67 @@
+<!-- FILEPATH: /c:/Users/user/Desktop/ResponsiveWeb/goods_main.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>쇼핑몰 메인 화면</title>
+    <meta charset="UTF-8">
+    <title>쿠키런 킹덤</title>
+    <link rel="stylesheet" type="text/css" href="Styles_goods.css">
+</head>
+<body>
+    <span class="slideshow-container">
+        <div class="Slidesbackground">
+           <div class="mySlides fade">
+           <img src="https://pbs.twimg.com/media/FQRQRM5aIAImb-e.jpg:large" class="slideshow-image">
+           </div>
+           <div class="mySlides fade">
+               <img src="https://image.zdnet.co.kr/2021/06/09/6b1771823ad56aaf1e00800d3a27b5d4.png" class="slideshow-image">
+           </div>
+           <div class="mySlides fade">
+               <img src="https://cdn.gamemeca.com/data_center/214/110/20200612183830.jpg" class="slideshow-image">
+           </div>
+           <div class="mySlides fade">
+               <img src="https://images.unsplash.com/photo-1527526029430-319f10814151?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" class="slideshow-image">
+           </div>
+           <div class="mySlides fade">
+               <img src="https://images.unsplash.com/photo-1600077029182-92ac8906f9a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" class="slideshow-image">
+           </div>
+           <div class="mySlides fade">
+               <img src="https://cdn.cnn.com/cnnnext/dam/assets/201030094143-stock-rhodesian-ridgeback-super-tease.jpg" class="slideshow-image">
+           </div>
+       </div>
+    </span>
+   
+</body>
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+       
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+    
+        setTimeout(showSlides, 2000); // 2초마다 이미지가 체인지됩니다
+    }
+</script>
+<!-- 이미지가 흐려지는 효과를 주기 위한 스타일 -->
+<style>
+    .mySlides {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .mySlides.fade {
+        opacity: 1;
+    }
+</style>
+</html>

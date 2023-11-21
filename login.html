@@ -25,25 +25,51 @@
     </form>
   </div>
 
+ 
   <script>
-    // 로그인 폼 제출 시 실행되는 함수
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // 폼 제출 기본 동작 방지
+     async function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-      // 입력된 아이디와 비밀번호 가져오기
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-
-      // 로컬 DB의 정보와 비교
-      if (username === "1" && password === "1") {
-        // 로그인 성공 시 상점 페이지로 이동
-        window.location.href = "store.html";
-      } else {
-        // 로그인 실패 시 경고 메시지 출력
-        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
-      }
+    // 실제 로그인 처리를 서버에 요청
+    const response = await fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `username=${username}&password=${password}`
     });
-  </script>
+
+    if (response.redirected) {
+      // 로그인이 성공하면 서버에서 리다이렉트된 페이지로 이동
+      window.location.href = response.url;
+    } else {
+      // 로그인이 실패하면 경고 메시지 출력
+      alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+    }
+  }
+
+  async function updateUIOnLogin() {
+    // 서버에서 사용자 정보 가져오기
+    const response = await fetch('/userinfo');
+    const userInfo = await response.json();
+
+    if (!userInfo.error) {
+      // 로그인 후 화면 변경
+      const loginLinks = document.querySelector(".link_item");
+      const myPageLink = document.getElementById("myPageLink");
+      const userId = document.getElementById("userId");
+
+      loginLinks.style.display = "none"; // 로그인 전 메뉴 감춤
+      myPageLink.style.display = "block"; // 로그인 후 내 정보 링크 보임
+      userId.style.display = "block"; // 유저 아이디 보임
+      userId.textContent = "회원 아이디: " + userInfo.userId;
+    }
+  }
+
+  window.addEventListener('load', updateUIOnLogin);
+</script>
 </body>
+
 
 </html>

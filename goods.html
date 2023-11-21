@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Styles_goods.css">
-
 </head>
 
 <body>
     <div class="header">
         <div class="link_item">
-            <a class="nav_link" href="login.html">로그인</a>
-            <a class="nav_link" href="mypage.html">내정보</a>
+            <p id="userId" style="display:none"></p>
+            <a class="nav_link" href="login.html" onclick="login()">로그인</a>
+            <a class="nav_link" href="mypage.html" style="display:none" id="myPageLink">내정보</a>
+            <p id="userId" style="display:none"></p>
         </div>
-      
+
         <h1 class="logo"><a href="/cookierun" class="_2yPVRArtDH N=a:GNB.storehome"><img
                     src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
                     data-src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
@@ -24,18 +25,17 @@
             <div class="search"><input type="text" title="검색어 입력" placeholder="검색어를 입력해보세요" value="" class="_38DpYZHzTy"
                     maxlength="500"><button class="_1H_iy_tmiI N=a:GNB.search"><span class="Y4Wg6LWa6z"><span
                             class="blind">검색하기</span></span></button></div>
-            <button onclick="filterItems('')">전체</button>
-            <button onclick="filterItems('clothes')">의상</button>
-            <button onclick="filterItems('electronics')">전자제품</button>
-            <button onclick="filterItems('food')">음식</button>
+            <div class="list">
+                <button onclick="filterItems('')">전체</button>
+                <button onclick="filterItems('clothes')">의상</button>
+                <button onclick="filterItems('electronics')">전자제품</button>
+                <button onclick="filterItems('food')">음식</button>
+            </div>
         </div>
 
     </div>
     <div class="container" id="item-container"></div>
     <div class="pagination" id="pagination"></div>
-
-
- 
 
     <script>
         const itemsPerPage = 24; // 페이지당 아이템 수
@@ -159,6 +159,27 @@
             displayPagination(filteredItems.length, 1);
         }
 
+        function login() {
+            // After successful login
+            window.location.href = "/c:/Users/user/Desktop/ResponsiveWeb/goods.html?loginSuccess=true";
+            // 여기에 실제 로그인 처리 코드를 추가해야 합니다.
+            // 로그인이 성공하면 아래의 내용이 실행됩니다.
+
+            // 예시로 아무 회원 아이디나 보여줌
+            const fakeUserId = "user123";
+
+            // 로그인 후 화면 변경
+            const loginLinks = document.querySelector(".link_item");
+            const myPageLink = document.getElementById("myPageLink");
+            const userId = document.getElementById("userId");
+
+            loginLinks.style.display = "none"; // 로그인 전 메뉴 감춤
+            myPageLink.style.display = "block"; // 로그인 후 내 정보 링크 보임
+            userId.style.display = "block"; // 유저 아이디 보임
+            userId.textContent = "회원 아이디: " + fakeUserId;
+        }
+
+
         // 초기 페이지 로드 시 전체 아이템 표시
         filterItems('');
 
@@ -166,6 +187,12 @@
         displayItems(items, 0, itemsPerPage);
         displayPagination(items.length, 1);
 
+        function getQueryParam(name) {
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            return urlSearchParams.get(name);
+        }
+
+        window.addEventListener('load', updateUIOnLogin);
     </script>
 </body>
 
