@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     width: 150%;
-    background-color: rgba(156, 111, 27, 0.74) ;
+    background-color: rgba(156, 111, 27, 0.74);
     z-index: 1;
 }
 
@@ -11,7 +11,8 @@
 
 .nav_link {
     display: inline-block;
-    margin-right: 10px; /* 간격 조절 */
+    margin-right: 10px;
+    /* 간격 조절 */
     font-size: 20px;
     font-weight: 500;
     color: #000000;
@@ -20,8 +21,10 @@
 }
 
 img {
-    max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
-    height: auto; /* 가로 세로 비율 유지 */
+    max-width: 100%;
+    /* 이미지가 부모 요소에 맞게 크기 조절 */
+    height: auto;
+    /* 가로 세로 비율 유지 */
 }
 
 .nav {
@@ -35,19 +38,20 @@ img {
 }
 
 
-.nav-logo-th{
+.nav-logo-th {
     width: 70px;
     height: 100%;
     margin-right: 20px;
-    
+
 }
 
 .nav-logo {
     width: 200px;
     height: 100%;
     margin-right: 20px;
-    
+
 }
+
 /* 
 .nav-logo img {
     width : 30%;
@@ -67,14 +71,17 @@ body {
     justify-content: center;
     position: relative;
     width: 100%;
-    height: 100vh; /* 화면 높이의 100%로 설정하여 수직 가운데 정렬 */
+    height: 100vh;
+    /* 화면 높이의 100%로 설정하여 수직 가운데 정렬 */
     background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
     background-clip: border-box;
     background-position: top center;
-    background-size: cover; /* 이미지를 화면에 꽉 차게 설정, 비율 유지 */
+    background-size: cover;
+    /* 이미지를 화면에 꽉 차게 설정, 비율 유지 */
     background-repeat: no-repeat;
     text-align: center;
 }
+
 .container {
     position: relative;
     width: 100%;
@@ -92,14 +99,14 @@ body {
     object-fit: cover;
 }
 
-.footer{
+.footer {
     position: relative;
     width: 100%;
     background-color: rgb(255, 174, 0);
     z-index: 1000;
 }
 
-.footer_item01{
+.footer_item01 {
     width: 20%;
     height: 100%;
     object-fit: contain;
@@ -107,7 +114,7 @@ body {
     margin: 0 auto;
 }
 
-.footer_item02{
+.footer_item02 {
     width: 5%;
     height: 100%;
     object-fit: contain;
@@ -116,31 +123,38 @@ body {
     margin: 0 auto;
 }
 
-.footer_tag{
+.footer_tag {
     width: 100%;
     height: 100%;
     object-fit: contain;
 
     display: block;
-    text-align: center; /* 가운데 정렬 추가 */
+    text-align: center;
+    /* 가운데 정렬 추가 */
 }
 
 
 @keyframes fuwafuwa-2 {
-    0%, 100% {
-        transform: translateY(-30px); /* 수정: -webkit-transform 제거 */
+
+    0%,
+    100% {
+        transform: translateY(-30px);
+        /* 수정: -webkit-transform 제거 */
     }
 }
+
 .content {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto; /* 추가 */
+    margin: 0 auto;
+    /* 추가 */
     background-color: #ffffff8e;
     padding: 6%;
     border-radius: 20px;
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
-    text-align: center; /* 추가 */
+    text-align: center;
+    /* 추가 */
 }
 
 .Label {
@@ -158,14 +172,16 @@ body {
 
 
 .border_about {
-    border:rgba(255, 174, 0, 0.671) solid 6px;
-    box-sizing: border-box; /* 추가 */
+    border: rgba(255, 174, 0, 0.671) solid 6px;
+    box-sizing: border-box;
+    /* 추가 */
 }
 
 .border_about:hover {
     border: rgba(202, 138, 0, 0.671) solid 6px;
-    box-sizing: border-box; /* 추가 */
-   /*animation: fuwafuwa-2 1s ease-in-out infinite alternate;   */
+    box-sizing: border-box;
+    /* 추가 */
+    /*animation: fuwafuwa-2 1s ease-in-out infinite alternate;   */
 }
 
 .container {
@@ -180,13 +196,14 @@ body {
 .start_mp4 {
     object-fit: cover;
     width: 100%;
-    height: 100vh; /* 화면의 높이에 맞게 조절 */
-  }
+    height: 100vh;
+    /* 화면의 높이에 맞게 조절 */
+}
 
 
-  /* 영상*/
+/* 영상*/
 
-  .media{
+.media {
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
     word-break: keep-all;
@@ -205,7 +222,9 @@ body {
     column-gap: 0.9375rem;
     row-gap: 2.0625rem;
     grid-template-columns: repeat(2, 1fr);
-  }/* Default styles for videos */
+}
+
+/* Default styles for videos */
 .media-item {
     display: inline-block;
     width: 560px;
@@ -216,8 +235,10 @@ body {
 /* Styles for small screens */
 @media (max-width: 768px) {
     .media {
-        grid-template-columns: 1fr; /* Change the number of columns to 1 for small screens */
-        padding: 0 1rem; /* Adjust padding for better responsiveness */
+        grid-template-columns: 1fr;
+        /* Change the number of columns to 1 for small screens */
+        padding: 0 1rem;
+        /* Adjust padding for better responsiveness */
     }
 
     .media-item {
@@ -235,6 +256,7 @@ body {
     object-fit: contain;
     display: inline-block;
 }
+
 .fade-in {
     opacity: 0;
     animation: fadeInAnimation 2s ease-in-out forwards;
@@ -244,79 +266,89 @@ body {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
-body{
-font-size: 20px;
-} 
+
+body {
+    font-size: 20px;
+
+}
+
 .icon {
-width: 110px;   /*전체를 감싸는 크기를 아이콘 크기로 맞춤*/
-height: 110px;
-margin: 10px;
-position: relative;
-}
-.icon span{
-position: absolute;  /*어떤 요소에 absoult를ㄹ 주면 블럭요소는 inline으로 변경됨.*/
-background-color: #000;
-width: 200px;
-color : #fff;
-top : -80px;
-text-align: center;
-padding: 10px;
-border-radius: 5px;
-left: 50%;    /*1. 왼쪽에서 50%위치에 둔다.*/
-transform: translateX(-50%);  /*2. 크기값을 50%만큼 이동시켜준다.->항상 중앙에 위치하게됨*/
-/*무엇인가가 서서히 나타나게 하려면 display:none->block보다는 opacity:0->1으로 두는게 더 효과가 좋음*/
-opacity: 0;
-transition: 0.5s; 
-/*투명도가 0이지만 -> 어떤 변화가 요청되면 0.5초뒤에 일어나자.*/
-
-/*사용자가 아이콘이 아닌, 말풍선이 있는 위치에 마우스를 올려도 효과가 발생!-> 오직 아이콘에 hover됐을 때 나타나게 하려면?*/
-/*그렇다면 말풍선의 존재 자체를 없게 만들면 됨 -> visiability(display를 하면 투명도를 못 줌ㅜ)*/
-visibility: hidden; /*자릿값을 유지하되, 존재자체가 사라지게 함-display:none은 자릿값도 사라지게함*/
-
+    width: 110px;
+    /*전체를 감싸는 크기를 아이콘 크기로 맞춤*/
+    height: 110px;
+    margin: 10px;
+    position: relative;
 }
 
-/*박스밑에 있는 삼각형을 만들기-> 먼저 사각형을 요소 끝에 만듬 -> 위치시킴 -> 박스랑 같은색으로 -> 사각형이 회전하여 삼각형처럼 보임*/
+.icon span {
+    position: absolute;
+    /*어떤 요소에 absoult를ㄹ 주면 블럭요소는 inline으로 변경됨.*/
+    background-color: #000;
+    width: 200px;
+    color: #fff;
+    top: -80px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    left: 50%;
+    /*1. 왼쪽에서 50%위치에 둔다.*/
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+    /*자릿값을 유지하되, 존재자체가 사라지게 함-display:none은 자릿값도 사라지게함*/
+
+}
+
 .icon span:after {
-/*선택한 요소의 맨 마지막 자식으로 의사 요소를 하나 생성합니다. 
-보통 content 속성과 함께 짝지어, 요소에 장식용 콘텐츠를 추가할 때 사용합니다. 기본값은 인라인*/
-content : '';  /*가상클래스 before, after는 무조건 content가 있어야 작동*/
-position: absolute;
-background-color:#000;
-width : 10px;
-height: 10px;
-/*transform은 한 요소에 1번밖에 못쓰므로 합쳐줘야함*/
-transform: rotate(45deg) translateX(-50%);
-bottom: -5px;
-left: 50%;    /*1. 왼쪽에서 50%위치에 둔다.*/
-/*2. 크기값을 50%만큼 이동시켜준다.->항상 중앙에 위치하게됨*/
+    content: '';
+    /*가상클래스 before, after는 무조건 content가 있어야 작동*/
+    position: absolute;
+    background-color: #000;
+    width: 10px;
+    height: 10px;
+    /*transform은 한 요소에 1번밖에 못쓰므로 합쳐줘야함*/
+    transform: rotate(45deg) translateX(-50%);
+    bottom: -5px;
+    left: 50%;
+    /*1. 왼쪽에서 50%위치에 둔다.*/
+    /*2. 크기값을 50%만큼 이동시켜준다.->항상 중앙에 위치하게됨*/
 
 }
+
 /*icon요소를 hover하면 -> icon의 자식 중 span에서 어떠한 변화가 있게 만듬*/
-.icon:hover span{
-opacity: 1;
-visibility: visible; 
-/*hover가 되면 -> 비쥬얼빌리티가 hidden에서 visible로 변경됨*/
-/*오직 아이콘에 hover했을 때 변경되게 함*/
+.icon:hover span {
+    opacity: 1;
+    visibility: visible;
 }
 
 .container {
-text-align : center;   /*글자 중앙 정렬*/
-display: flex;  /*가로로 일렬 배치*/
-justify-content: center;  /*수평 중앙*/
-align-items: center;  /*수직 중앙 -> container의 높이값이 있어야 적용됨*/
-height : 100vh;   /*vh??*/
+    text-align: center;
+    /*글자 중앙 정렬*/
+    display: flex;
+    /*가로로 일렬 배치*/
+    justify-content: center;
+    /*수평 중앙*/
+    align-items: center;
+    /*수직 중앙 -> container의 높이값이 있어야 적용됨*/
+    height: 100vh;
+    /*vh??*/
 }
 
-.img1{
-width : 100px;
-height: 100px;
+.img1 {
+    width: 120px;
+    height: 130px;
 }
-.container{
-background-color: #ffffff8f;
-width: 80%;
-padding-bottom: 200px;
+
+.container {
+    background-color: #ffffff8f;
+    width: 80%;
+    height: 900px;
+    padding-bottom: 200px; 
+    margin-top: 70px;
 }
