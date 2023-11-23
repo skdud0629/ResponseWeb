@@ -2,100 +2,21 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쿠키런 캐릭터 소개</title>
-    <link rel="stylesheet" href="Styles_character.css">
-    <style>
-        .fade-in {
-            opacity: 0;
-            animation: fadeInAnimation 2s ease-in-out forwards;
-        }
-
-        @keyframes fadeInAnimation {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        body{
-        font-size: 20px;
-    } 
-    .icon {
-        width: 110px;   /*전체를 감싸는 크기를 아이콘 크기로 맞춤*/
-        height: 110px;
-        margin: 10px;
-        position: relative;
-    }
-    .icon span{
-        position: absolute;  /*어떤 요소에 absoult를ㄹ 주면 블럭요소는 inline으로 변경됨.*/
-        background-color: #000;
-        width: 200px;
-        color : #fff;
-        top : -80px;
-        text-align: center;
-        padding: 10px;
-        border-radius: 5px;
-        left: 50%;    /*1. 왼쪽에서 50%위치에 둔다.*/
-        transform: translateX(-50%);  /*2. 크기값을 50%만큼 이동시켜준다.->항상 중앙에 위치하게됨*/
-        /*무엇인가가 서서히 나타나게 하려면 display:none->block보다는 opacity:0->1으로 두는게 더 효과가 좋음*/
-        opacity: 0;
-        transition: 0.5s; 
-        /*투명도가 0이지만 -> 어떤 변화가 요청되면 0.5초뒤에 일어나자.*/
-
-        /*사용자가 아이콘이 아닌, 말풍선이 있는 위치에 마우스를 올려도 효과가 발생!-> 오직 아이콘에 hover됐을 때 나타나게 하려면?*/
-        /*그렇다면 말풍선의 존재 자체를 없게 만들면 됨 -> visiability(display를 하면 투명도를 못 줌ㅜ)*/
-        visibility: hidden; /*자릿값을 유지하되, 존재자체가 사라지게 함-display:none은 자릿값도 사라지게함*/
-
-    }
-
-    /*박스밑에 있는 삼각형을 만들기-> 먼저 사각형을 요소 끝에 만듬 -> 위치시킴 -> 박스랑 같은색으로 -> 사각형이 회전하여 삼각형처럼 보임*/
-    .icon span:after {
-        /*선택한 요소의 맨 마지막 자식으로 의사 요소를 하나 생성합니다. 
-        보통 content 속성과 함께 짝지어, 요소에 장식용 콘텐츠를 추가할 때 사용합니다. 기본값은 인라인*/
-        content : '';  /*가상클래스 before, after는 무조건 content가 있어야 작동*/
-        position: absolute;
-        background-color:#000;
-        width : 10px;
-        height: 10px;
-        /*transform은 한 요소에 1번밖에 못쓰므로 합쳐줘야함*/
-        transform: rotate(45deg) translateX(-50%);
-        bottom: -5px;
-        left: 50%;    /*1. 왼쪽에서 50%위치에 둔다.*/
-        /*2. 크기값을 50%만큼 이동시켜준다.->항상 중앙에 위치하게됨*/
-    
-    }
-    /*icon요소를 hover하면 -> icon의 자식 중 span에서 어떠한 변화가 있게 만듬*/
-    .icon:hover span{
-        opacity: 1;
-        visibility: visible; 
-        /*hover가 되면 -> 비쥬얼빌리티가 hidden에서 visible로 변경됨*/
-        /*오직 아이콘에 hover했을 때 변경되게 함*/
-    }
-
-    .container {
-        text-align : center;   /*글자 중앙 정렬*/
-        display: flex;  /*가로로 일렬 배치*/
-        justify-content: center;  /*수평 중앙*/
-        align-items: center;  /*수직 중앙 -> container의 높이값이 있어야 적용됨*/
-        height : 100vh;   /*vh??*/
-    }
-    
-    .img1{
-        width : 100px;
-        height: 100px;
-    }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿠키런 캐릭터 소개</title>
+  <link rel="stylesheet" href="Styles_character.css">
+  <style>
+     
+  </style>
 </head>
 
 <body>
-    <header class="header">
-        <nav>
-          <div class="nav pc_display">
-            <div class="nav_item">
-              <a href="https://www.shinchan-app.jp/30th-anniv-anime/" target="_blank" rel="noopener">
+  <header class="header">
+    <nav>
+      <div class="nav pc_display">
+      <div class="nav_item">
+        <a href="https://www.shinchan-app.jp/30th-anniv-anime/" target="_blank" rel="noopener">
     
             </div>
     
@@ -120,28 +41,333 @@
       </header>
     <main>
         <div class="fade-in">
-            <h1>쿠키런 캐릭터 소개</h1>
-            <div class="character">
-                <img src="character1.jpg" alt="캐릭터1">
-                <img src="character2.jpg" alt="캐릭터2">
-                <img src="character3.jpg" alt="캐릭터3">
-                <!-- Add more character images here -->
-            </div>
-            <div class="buttons">
-                <button class="grade-button" onclick="showCharacters('S')">S 등급</button>
-                <button class="grade-button" onclick="showCharacters('A')">A 등급</button>
-                <button class="grade-button" onclick="showCharacters('B')">B 등급</button>
-                <!-- Add more grade buttons here -->
-            </div>
-            <div id="character-list">
-                <!-- Character list will be dynamically updated here -->
-            </div>
+          <br>  <br>
         </div>
+        
         <div class="container">
-            <div class="icon">
-                <img class="img1" src="https://lh3.googleusercontent.com/gd7vl3Bb-PPYSzae1LJSO3gsuhY5u6vlpbB2CPa-sC5MzWVZo9zo4Q1ImKbrbbDGtA"/>
-                <span>이 아이콘에 대한 설명입니다.!</span>
-            </div>
+          <br>
+          <table>
+            <tr>
+              <td colspan="10">
+                <h1>캐릭터 소개</h1>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://images-ext-2.discordapp.net/external/9pHP-1V6fLNid4ls8ocn7XzLqaz3DYJDm0Eqq6M8ZKw/%3Fcb%3D20220416024757%26path-prefix%3Dko/https/static.wikia.nocookie.net/cookierun/images/3/34/%25EC%25BB%25A4%25EC%258A%25A4%25ED%2584%25B0%25EB%2593%259C_3%25EC%2584%25B8%25EB%25A7%259B_%25EC%25BF%25A0%25ED%2582%25A4.png/revision/latest?format=webp&width=403&height=483" />
+                  <span>커스터드맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://images-ext-1.discordapp.net/external/QULumf5ihV20mz5sUdmu2OSpLAd0d8OU6JSpLMWCJRQ/%3Fcb%3D20230323083542%26path-prefix%3Dko/https/static.wikia.nocookie.net/cookierun/images/4/4b/%25EB%258B%258C%25EC%259E%2590%25EB%25A7%259B_%25EC%25BF%25A0%25ED%2582%25A4_%2528OB%2529.png/revision/latest/thumbnail/width/360/height/360?format=webp" />
+                  <span>닌자맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://images-ext-2.discordapp.net/external/9Q_CXJUoNVbIJXqHCDvPUmjRCP9-h_bIBhYqZaxzROA/%3Ftype%3Dw420/https/mblogthumb-phinf.pstatic.net/20160303_116/hsysn0618_1457007429166E1l7T_PNG/creampuffcookieafter.png?format=webp" />
+                  <span>슈크림맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://images-ext-1.discordapp.net/external/3MhME5_VDC2LgxrBVLjqf7mvDC-lEfRUvAwYSF7x5Zo/https/i.pinimg.com/originals/a3/bd/a9/a3bda9bd4791f5ade07b8ef03afdd9f7.png?format=webp" />
+                  <span>팬케이크맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/3/3f/%ED%95%B4%EC%A0%81%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323084605&path-prefix=ko" />
+                  <span>해적맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/4/4b/%EB%B3%B4%EB%8D%94%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323083002&path-prefix=ko " />
+                  <span>보더맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/7/73/%ED%83%90%ED%97%98%EA%B0%80%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230330031229&path-prefix=ko" />
+                  <span>탐험가맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/0/0c/%EC%B2%9C%EB%85%84%EB%82%98%EB%AC%B4_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230323091120&path-prefix=ko" />
+                  <span>천년나무쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/0/0e/%EB%9D%BC%EC%9E%84%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230415085721&path-prefix=ko" />
+                  <span>라임맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/e/ec/%ED%92%8B%EC%82%AC%EA%B3%BC%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230330030601&path-prefix=ko" />
+                  <span>풋사과맛쿠키</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://images-ext-2.discordapp.net/external/n_Igunuvla4Xuhpp4ONlNGa5gMUdq5qMWX8xhdw83Ao/%3Fformat%3Dpng%26name%3Dsmall/https/pbs.twimg.com/media/Ek6f9YHVgAAqYKK?format=webp&width=483&height=483" />
+                  <span>크루와상맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://media.discordapp.net/attachments/1030202485622722580/1174335400299466862/p8VsXL7rzcBPyrHI5SuS3v-AjRpEGiAw5B145_F9FWmdsWDMODFz7oF45u0XuM_r7vX5stj3LEeMREjs5fitjg.png?ex=65673811&is=6554c311&hm=b69b5f88bebbd28c726fce40ba089966dacb13b6248c811d22f4d39f1874ca7b&=&format=webp&width=612&height=483" />
+                  <span>버블검맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/4/41/%EB%8F%85%EB%B2%84%EC%84%AF%EB%A7%9B_%EC%BF%A0%ED%82%A4_(%ED%82%B9%EB%8D%A4).png/revision/latest?cb=20220416020501&path-prefix=ko" />
+                  <span>독버섯맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/1/1e/%EC%8A%A4%ED%83%80%ED%9B%84%EB%A5%B4%EC%B8%A0%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230323021723&path-prefix=ko" />
+                  <span>스타후르츠맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/4/49/%EC%9A%A9%EC%82%AC%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323084322&path-prefix=ko" />
+                  <span>용사맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/e/ea/%ED%8C%9D%ED%95%91_%EC%BA%94%EB%94%94%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230326031917&path-prefix=ko" />
+                  <span>팝핑캔디맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/2/2c/%EC%83%A4%EB%B2%B3%EC%83%81%EC%96%B4%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28%EB%A8%B8%EB%A7%A8%29.png/revision/latest?cb=20230324113943&path-prefix=ko" />
+                  <span>샤벳상어맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/1/16/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%83%80%EC%9D%98_%EA%B3%B5%ED%95%AD%EB%A3%A9_%EC%83%A4%EC%9D%B4%EB%8B%9D%EA%B8%80%EB%A6%AC%ED%84%B0%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230324113451&path-prefix=ko" />
+                  <span>샤이닝글리터맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/e/ec/%EB%B8%94%EB%9E%99%EB%B2%A0%EB%A6%AC%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230324112305&path-prefix=ko" />
+                  <span>블랙베리맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/a/a2/%EB%8B%A4%ED%81%AC%EC%B4%88%EC%BD%94_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230324110749&path-prefix=ko" />
+                  <span>다크초코맛쿠키</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/9/98/%EB%B2%9A%EA%BD%83%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20150606113531&path-prefix=ko" />
+                  <span>벚꽃맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/3/3d/%EC%B2%B4%EB%A6%AC%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20200927133407&path-prefix=ko" />
+                  <span>체리맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/8/8a/%EC%BD%94%EC%BD%94%EC%95%84%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20160715053634&path-prefix=ko" />
+                  <span>코코아맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/c/c5/%ED%93%A8%EC%96%B4%EB%B0%94%EB%8B%90%EB%9D%BC_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20210503051445&path-prefix=ko" />
+                  <span>퓨어바닐라쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/e/e2/%EC%B9%98%EC%A6%88%EC%BC%80%EC%9D%B4%ED%81%AC%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230327120850&path-prefix=ko" />
+                  <span>치즈케이크맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/4/47/%EB%B3%B5%EC%88%AD%EC%95%84%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230325130911&path-prefix=ko" />
+                  <span>복숭아맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/2/20/%EB%AA%A8%EC%B9%B4%EA%B0%80%EC%98%A4%EB%A6%AC%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230324114715&path-prefix=ko" />
+                  <span>모카가오리맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/0/01/%EB%9E%8D%EC%8A%A4%ED%84%B0%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230324114606&path-prefix=ko" />
+                  <span>랍스터맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/7/7d/%EC%97%90%EC%9D%BC%EB%A6%AC%EC%96%B8_%EB%8F%84%EB%84%9B.png/revision/latest?cb=20230324114316&path-prefix=ko" />
+                  <span>에일리언도넛</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/0/04/%ED%81%AC%EB%A6%BC_%EC%9C%A0%EB%8B%88%EC%BD%98_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230324113802&path-prefix=ko" />
+                  <span>크림유니콘쿠키</span>
+                </div>
+              </td>
+            </tr>
+          
+
+            <tr>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="  https://static.wikia.nocookie.net/cookierun/images/6/60/%EA%B3%B5%EC%A3%BC%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323084411&path-prefix=ko" />
+                  <span>치즈케이크맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/9/94/%EB%B0%94%EB%8B%A4%EC%9A%94%EC%A0%95_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323022320&path-prefix=ko" />
+                  <span>바다요정쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/1/1f/%EC%8B%9C%EA%B0%84%EC%A7%80%EA%B8%B0_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230326031810&path-prefix=ko" />
+                  <span>시간지기쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/f/f5/%EC%9A%A9%EA%B0%90%ED%95%9C_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323021523&path-prefix=ko" />
+                  <span>용감한쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/9/9f/%EB%94%B8%EA%B8%B0%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323082729&path-prefix=ko" />
+                  <span>딸기맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/e/e9/%EB%A7%88%EB%B2%95%EC%82%AC%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323084725&path-prefix=ko" />
+                  <span>마법사맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/3/39/%EC%B2%9C%EC%82%AC%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323083408&path-prefix=ko" />
+                  <span>천사맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/3/33/%EC%A2%80%EB%B9%84%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20230323083326&path-prefix=ko" />
+                  <span>좀비맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/9/92/%EC%98%88%EC%96%B8%EC%9E%90%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28%ED%82%B9%EB%8D%A4%29.png/revision/latest?cb=20230114080744&path-prefix=ko" />
+                  <span>예언자맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/0/05/%EC%9A%94%EC%A0%95%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20201002142251&path-prefix=ko" />
+                  <span>요정맛쿠키</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/f/fc/%ED%95%91%ED%81%AC%EC%B4%88%EC%BD%94_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20201013083525&path-prefix=ko" />
+                  <span>핑크초코맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/0/09/%EC%95%84%EB%B3%B4%EC%B9%B4%EB%8F%84%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20201013082816&path-prefix=ko" />
+                  <span>아보카도맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/a/a4/%EC%9D%8C%EC%9C%A0%EC%8B%9C%EC%9D%B8%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28OB%29.png/revision/latest?cb=20201013082951&path-prefix=ko" />
+                  <span>음유시인쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/a/a8/%EC%9A%A9%EA%B3%BC_%EB%93%9C%EB%9E%98%EA%B3%A4_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20200928103526&path-prefix=ko" />
+                  <span>용과드레곤쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/a/a1/%EC%9E%90%EC%83%89%EA%B3%A0%EA%B5%AC%EB%A7%88%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20201013090824&path-prefix=ko" />
+                  <span>자색고구마맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/e/ec/%EC%83%9D%EC%9D%BC%EC%BC%80%EC%9D%B4%ED%81%AC%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20201013090919&path-prefix=ko" />
+                  <span>생일케이크맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/6/62/%EC%B2%9C%ED%95%98_%EB%8C%80%EC%9E%A5%EC%88%98_%EB%8C%80%EC%B6%94%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20201130142916&path-prefix=ko" />
+                  <span>천하대장수대추맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/5/5d/%EA%B4%B4%EB%8F%84%EB%A7%9B_%EC%BF%A0%ED%82%A4_%28PW%29.png/revision/latest?cb=20201208124230&path-prefix=ko" />
+                  <span>괴도맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/f/fb/%ED%99%94%EC%9D%B4%ED%8A%B8%EC%B4%88%EC%BD%94_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20160130041159&path-prefix=ko" />
+                  <span>화이트초코맛쿠키</span>
+                </div>
+              </td>
+              <td>
+                <div class="icon">
+                  <img class="img1" src="https://static.wikia.nocookie.net/cookierun/images/c/c0/%ED%8C%8C%EC%8A%A4%ED%85%94%EB%A8%B8%EB%9E%AD%EB%A7%9B_%EC%BF%A0%ED%82%A4.png/revision/latest?cb=20230323020909&path-prefix=ko" />
+                  <span>파스텔머랭맛쿠키</span>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
     </main>
 
@@ -156,7 +382,6 @@
             </a>
           </div>
           <br>
-      
           <br>
           <div class="footer_tag">
             <p> © 2021136111. JANG NA YOUNG</p>
