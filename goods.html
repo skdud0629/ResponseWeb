@@ -22,9 +22,12 @@
                     data-src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
                     class="_1QhZSUVBeK" alt="쿠키런스토어"></a></h1>
         <div class="find_item">
-            <div class="search"><input type="text" title="검색어 입력" placeholder="검색어를 입력해보세요" value="" class="_38DpYZHzTy"
-                    maxlength="500"><button class="_1H_iy_tmiI N=a:GNB.search"><span class="Y4Wg6LWa6z"><span
-                            class="blind">검색하기</span></span></button></div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="검색어를 입력하세요" maxlength="500">
+                <button class="_1H_iy_tmiI N=a:GNB.search" onclick="searchItems()">
+                    <span class="Y4Wg6LWa6z"><span class="blind">검색하기</span></span>
+                </button>
+            </div>
             <div class="list">
                 <button onclick="filterItems('')">전체</button>
                 <button onclick="filterItems('clothes')">의상</button>
@@ -34,46 +37,78 @@
         </div>
 
     </div>
-    <div class="container" id="item-container"></div>
+
+    <div class="items">
+        <div class="container" id="item-container"></div>
+    </div>
     <div class="pagination" id="pagination"></div>
 
+    <footer>
+        <div class="footer">
+            <br>
+            <div class="footer_item01">
+                <a href="https://www.facebook.com/cookie.run/" target="_blank" rel="noopener">
+                    <img src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
+                        alt="로고">
+                </a>
+            </div>
+            <br>
+            <br>
+            <div class="footer_tag">
+                <p> © 2021136111. JANG NA YOUNG</p>
+                <p> © 2021 DEVSISTERS Corp. All rights reserved.</p>
+                <p> © 2021 SHIN-EI ANIMATION CO., LTD. ALL RIGHTS RESERVED.</p>
+                <br>
+            </div>
+
+        </div>
+    </footer>
+
     <script>
-        const itemsPerPage = 24; // 페이지당 아이템 수
+        const itemsPerPage = 25; // 페이지당 아이템 수
         const items = [
             { name: "item1", price: "1000", image: "https://shop-phinf.pstatic.net/20230406_139/1680774590675RTw80_JPEG/81910424444651228_173986660.jpg?type=f750_750", category: "clothes" },
-            { name: "item2", price: "2000", image: "image2.jpg", category: "clothes" },
+            { name: "item2", price: "2000", image: "https://shop-phinf.pstatic.net/20231114_258/1699952949584oLc3t_JPEG/12502616375115323_1205563992.jpg?type=f750_750", category: "clothes" },
             // 나머지 아이템들도 category 속성 추가
 
-            { name: "item51", price: "51000", image: "image51.jpg", category: "electronics" },
-            { name: "item52", price: "52000", image: "image52.jpg", category: "electronics" },
+            { name: "item51", price: "51000", image: "https://shop-phinf.pstatic.net/20230831_218/1693448679096XwqHr_JPEG/11752110914904986_353927310.jpg?type=f750_750", category: "electronics" },
+            { name: "item52", price: "52000", image: "https://shop-phinf.pstatic.net/20230712_49/1689147174398GXdp1_JPEG/4663662720271727_1356439499.jpg?type=f750_750", category: "electronics" },
             // 나머지 아이템들도 category 속성 추가
 
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item51", price: "51000", image: "image51.jpg", category: "electronics" },
-            { name: "item52", price: "52000", image: "image52.jpg", category: "electronics" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20230831_221/1693449128922nVGAN_JPEG/11752560720769515_1807046803.jpg?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20231026_67/1698307135475QB3CW_PNG/45272390259857309_1833212626.png?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20231026_124/1698307127685NBV94_PNG/2940368590539063_1658628169.png?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20231114_202/1699953403443Iz8WI_JPEG/52025790832298130_1281338351.jpg?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20230831_282/1693449565983XaI10_JPEG/5102888014707584_1354174221.jpg?type=f750_750", category: "food" },
+            { name: "item51", price: "51000", image: "https://shop-phinf.pstatic.net/20231107_123/1699332251801gjxdW_JPEG/2889125558569288_1157254165.jpg?type=f750_750", category: "electronics" },
+            { name: "item52", price: "52000", image: "https://shop-phinf.pstatic.net/20231114_202/1699953403443Iz8WI_JPEG/52025790832298130_1281338351.jpg?type=f750_750", category: "electronics" },
             // 나머지 아이템들도 category 속성 추가
 
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" },
-            { name: "item81", price: "81000", image: "image81.jpg", category: "food" },
-            { name: "item82", price: "82000", image: "image82.jpg", category: "food" }
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20230712_49/1689147174398GXdp1_JPEG/4663662720271727_1356439499.jpg?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20230831_218/1693448679096XwqHr_JPEG/11752110914904986_353927310.jpg?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20230406_139/1680774590675RTw80_JPEG/81910424444651228_173986660.jpg?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20220921_18/1663730000755LEE1N_PNG/64865780451246402_1723524182.png?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20230711_53/1689065284946vVsqU_JPEG/4846257798732907_441903086.jpg?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20230530_41/168541639577879P8x_PNG/331284706142756_1175157606.png?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20230531_291/1685508686936KaFxp_JPEG/423575899987382_1316169411.jpg?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20230222_220/1677059546771Dj2x4_PNG/78195330470053175_139074041.png?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20230117_77/1673935614865aBhq1_JPEG/75071442677003321_1169926348.jpg?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20230117_295/1673935486794a3KPL_JPEG/75071314598041834_123527304.jpg?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20220928_74/1664328525676DnMrD_PNG/65464424364280268_598838589.png?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20220823_28/1661235144912s9CiX_PNG/62371043481252376_343828875.png?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20220819_249/1660890544520tWGJO_PNG/62026328220720142_1145944309.png?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20210409_104/1617963672016ntKn9_PNG/19099451717239949_1428919487.png?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20231120_223/1700470590383DRBrm_PNG/12152669583929984_942066495.png?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20231101_94/1698813098722taPa0_JPEG/45778353435012261_917823960.jpg?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20231027_285/1698367644172Dg89G_PNG/1380253049062546_805017151.png?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20231026_183/1698308297711NMoKV_PNG/6681976523105565_1726208265.png?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20231013_209/16971850586927DgsX_JPEG/1627546518310031_405469444.jpeg?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20231013_93/1697184879381WpLRN_JPEG/47359421299872102_2032801656.jpeg?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20231012_10/1697077648404UlAFC_PNG/7226097989637996_987943128.png?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20231010_243/1696913083601ohVhu_PNG/43296958514741466_712484271.png?type=f750_750", category: "food" },
+            { name: "item81", price: "81000", image: "https://shop-phinf.pstatic.net/20230920_100/1695172268096cHsxo_PNG/856742000306448_1785276822.png?type=f750_750", category: "food" },
+            { name: "item82", price: "82000", image: "https://shop-phinf.pstatic.net/20230913_158/1694601277965gl7nl_PNG/285751870893531_1597439713.png?type=f750_750", category: "food" }
         ];
 
 
