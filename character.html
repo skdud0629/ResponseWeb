@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠키런 캐릭터 소개</title>
+    <link rel="stylesheet" href="Styles_character.css">
+    <style>
+        .fade-in {
+            opacity: 0;
+            animation: fadeInAnimation 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+          <div class="nav pc_display">
+            <div class="nav_item">
+              <a href="https://www.shinchan-app.jp/30th-anniv-anime/" target="_blank" rel="noopener">
+    
+            </div>
+    
+            <div class="nav_item"><a class="nav_link" href="#top">
+                <img
+                  src="https://i.namu.wiki/i/8mqn9mxiD8cVJeA-krMXlYbRiT6UAZqiFg-jUTljcfCb7jIuHmAXdZAabHJO7Mkt6FMyQrovWlJ4_FAhiJv-zQ.webp"
+                  alt="메뉴" class="nav-logo"></a>
+            </div>
+    
+            <div class="nav_link_item pc_display">
+            <a class="nav_link" href="login.html">로그인</a>
+            <a class="nav_link" href=" character.html">캐릭터</a>
+            <a class="nav_link" href="event.html">이벤트</a>
+            <a class="nav_link" href="pop-up.html">팝업스토어</a>
+            <a class="nav_link" href="goods_main.html">상품</a>
+    
+           </div>
+            <!--<div class="nav_link_item pc_display"><a class="nav_link" href="#contact">お問い合わせ</a></div>-->
+    
+          </div>
+        </nav>
+      </header>
+    <main>
+        <div class="fade-in">
+            <h1>쿠키런 캐릭터 소개</h1>
+            <div class="character">
+                <img src="character1.jpg" alt="캐릭터1">
+                <img src="character2.jpg" alt="캐릭터2">
+                <img src="character3.jpg" alt="캐릭터3">
+                <!-- Add more character images here -->
+            </div>
+            <div class="buttons">
+                <button class="grade-button" onclick="showCharacters('S')">S 등급</button>
+                <button class="grade-button" onclick="showCharacters('A')">A 등급</button>
+                <button class="grade-button" onclick="showCharacters('B')">B 등급</button>
+                <!-- Add more grade buttons here -->
+            </div>
+            <div id="character-list">
+                <!-- Character list will be dynamically updated here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+          <br>
+          <div class="footer_item01">
+            <a href="https://www.facebook.com/cookie.run/" target="_blank" rel="noopener">
+              <img
+                src="https://i.namu.wiki/i/8mqn9mxiD8cVJeA-krMXlYbRiT6UAZqiFg-jUTljcfCb7jIuHmAXdZAabHJO7Mkt6FMyQrovWlJ4_FAhiJv-zQ.webp"
+                alt="로고">
+            </a>
+          </div>
+          <br>
+      
+          <br>
+          <div class="footer_tag">
+            <p> © 2021136111. JANG NA YOUNG</p>
+            <p> © 2021 DEVSISTERS Corp. All rights reserved.</p>
+            <p> © 2021 SHIN-EI ANIMATION CO., LTD. ALL RIGHTS RESERVED.</p>
+            <br>
+          </div>
+    
+        </div>
+      </footer>
+    
+ 
+</body>
+<script>
+    function showCharacters(grade) {
+        // Get the character list based on the grade and update the character-list div
+        // You can use JavaScript to fetch the character data from a server or use a predefined array of characters
+        // and update the character-list div accordingly
+    }
+</script>
+</html>
