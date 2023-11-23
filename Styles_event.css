@@ -1,0 +1,23 @@
+  /* 이벤트 스타일을 여기에 작성하세요 */
+  #header {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+#footer {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+}
+
+#event-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
