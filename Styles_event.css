@@ -34,12 +34,12 @@ body {
     width: 100%;
     border-collapse: collapse;
 }
-
+/* 
 .grid td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
-}
+} */
 
 .grid img {
     width: 100%;
@@ -148,6 +148,10 @@ body {
     height: auto;
     border-collapse: collapse;
     margin: 0 auto; /* 가운데 정렬 추가 */
+    background-color: #bbbbbb90;
+    border-radius: 40px;
+    text-align: center;
+    
 }
 
 .grid img {
@@ -155,6 +159,22 @@ body {
     height: 300px; /* 이미지의 세로 크기를 100px로 지정 */
 }
 
-.event_table {
-    
+
+.grid td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  
+}
+
+
+
+.nav_link {
+    display: inline-block;
+    margin-right: 10px; /* 간격 조절 */
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
