@@ -29,12 +29,16 @@
             </button>
         </div>
 
-   
+
         <div class="list" style="display: flex; gap: 40px;">
-            <button onclick="filterItems('')" style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">전체</button>
-            <button onclick="filterItems('clothes')" style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">의상</button>
-            <button onclick="filterItems('electronics')" style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">전자제품</button>
-            <button onclick="filterItems('food')" style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">음식</button>
+            <button onclick="filterItems('')"
+                style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">전체</button>
+            <button onclick="filterItems('clothes')"
+                style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">의상</button>
+            <button onclick="filterItems('electronics')"
+                style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">전자제품</button>
+            <button onclick="filterItems('food')"
+                style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">음식</button>
         </div>
     </div>
 
@@ -158,6 +162,10 @@
                 itemInfoElement.appendChild(descElement);
 
                 itemElement.appendChild(itemInfoElement);
+                itemElement.addEventListener("click", () => {
+                    // 아이템을 클릭했을 때의 동작을 여기에 추가
+                    navigateToItemDetailPage(item);
+                });
 
                 container.appendChild(itemElement);
             }
@@ -242,17 +250,13 @@
         displayItems(items, 0, itemsPerPage);
         displayPagination(items.length, 1);
 
-        itemElement.addEventListener("click", () => {
-            // 아이템을 클릭했을 때의 동작을 여기에 추가
-            navigateToItemDetailPage(item);
-        });
 
         function getQueryParam(name) {
             const urlSearchParams = new URLSearchParams(window.location.search);
             return urlSearchParams.get(name);
         }
 
-        window.addEventListener('load', updateUIOnLogin);
+     
     </script>
 </body>
 

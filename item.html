@@ -4,95 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>상품 상세 페이지</title>
-    <style>
-        body {
-            background-image: url("https://previews.123rf.com/images/vectorikart/vectorikart1511/vectorikart151100007/48428963-%EB%8B%A4%EB%A5%B8-%EC%BF%A0%ED%82%A4%EC%99%80-%ED%8F%89%EB%A9%B4-%EB%B2%A1%ED%84%B0-%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4-%EB%B0%B0%EA%B2%BD-%EC%9B%90%ED%99%9C%ED%95%9C-%ED%8C%A8%ED%84%B4%EC%9E%85%EB%8B%88%EB%8B%A4-%EC%A7%84%EC%A0%80-%EB%B8%8C%EB%A0%88%EB%93%9C-%EB%82%A8%EC%9E%90-%EC%82%AC%EC%8A%B4-%EB%88%88%EC%86%A1%EC%9D%B4-%EB%B2%A8%EA%B3%BC-%EB%8B%A4%EB%A5%B8-%EA%B2%A8%EC%9A%B8-%ED%9C%B4%EA%B0%80-%EA%B8%B0%ED%98%B8%EC%9E%85%EB%8B%88%EB%8B%A4-%EC%A0%84%ED%86%B5-%EC%B6%95%EC%A0%9C-%EB%B2%BD%EC%A7%80.jpg");
-        }
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo {
-            text-align: center;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-
-        .product-container {
-            width: 50%;
-            margin: auto;
-        }
-
-        .product-image {
-            width: 100%;
-            height: auto;
-        }
-
-        .product-info {
-            margin-top: 20px;
-        }
-
-        .product-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .product-description {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .option-select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        .buy-button {
-            background-color: #333;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            text-transform: uppercase;
-            cursor: pointer;
-            display: block;
-            width: 100%;
-        }
-
-        .find_item {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .link_item {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .footer {
-            /* 추가된 푸터 스타일 */
-            /*  border-top: 2px solid #ddd;*/
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-            height: auto;
-        }
-
-        /* 여기에 추가적인 스타일링을 넣으세요 */
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Styles_item.css">
+    \
 </head>
 
 <body>
@@ -105,9 +19,11 @@
         </div>
 
         <h1 class="logo"><a href="/cookierun" class="_2yPVRArtDH N=a:GNB.storehome"><img
-            src="https://shop-phinf.pstatic.net/20231120_223/1700461846809Iq8iG_PNG/CRO_Logo_ENG2.png"
+                    src="https://shop-phinf.pstatic.net/20231120_223/1700461846809Iq8iG_PNG/CRO_Logo_ENG2.png"
                     data-src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
                     class="_1QhZSUVBeK" alt="쿠키런스토어"></a></h1>
+
+
         <div class="find_item">
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="검색어를 입력하세요" maxlength="500">
@@ -118,15 +34,69 @@
         </div>
 
     </div>
+    <div class="container">
+        <table>
+            <tr rowspan="2">
+                <td colspan="2">
+                    <h1 class="product-title">[쿠키런스토어] 쿠키런 플러시 세트 (27cm) 3종</h1>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="product-image">
+                        <img src="https://shop-phinf.pstatic.net/20230406_139/1680774590675RTw80_JPEG/81910424444651228_173986660.jpg?type=m510"
+                            alt="쿠키런 플러시 세트" />
+                    </div>
+                </td>
+              
+                <td>
+                    <div class="product-details">
+                        <p class="product-price">19,000원</p>
+                        <div class="purchase-options">
+                            <label for="color">캐릭터 선택:</label>
+                            <select id="color">
+                                <option value="color1">용감한 쿠키</option>
+                                <option value="color2">딸기맛 쿠키</option>
+                                <option value="color2">악마맛 쿠키</option>
+                                <!-- Other color options -->
+                            </select>
+                            <label for="quantity">수량:</label>
+                            <select id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <!-- Other quantity options -->
+                            </select>
+                        </div>
+                        <button class="add-to-cart">장바구니에 추가</button>
+                        <div class="shipping-info">
+                            배송비 3,000원 (주문금액 30,000원 이상 무료) - CJ 대한통운(예약)
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
 
     <div class="product-container">
-        <img src="https://via.placeholder.com/377x800" alt="Handmade Mac Coat" class="product-image">
+        <img src="https://shop-phinf.pstatic.net/20230406_133/1680774670986iIAjL_JPEG/%EC%BF%A0%ED%82%A4%EB%9F%B0_%EB%B4%89%EC%A0%9C%EC%9D%B8%ED%98%95_27cm(2).jpg?type=w860"
+            alt="Handmade Mac Coat" class="product-image">
         <div class="product-info">
-            <h1 class="product-title">Handmade Mac Coat</h1>
+            <h1 class="product-title">푹신푹신 봉제 인형</h1>
             <p class="product-description">
-                나만의 스타일을 자유롭게 표현할 수 있는 핸드메이드 맥 코트입니다. 고퀄리티 원단과 뛰어난 마감 처리로 오래도록 함께할 수 있는 아이템입니다.
-                <!-- 여기에 더 많은 제품 설명을 넣으세요 -->
+            <p>혼자여도, 친구들과 함께여도 좋아🧡</p>
+            <p>27cm 인형과 45cm 인형 같이두면</p>
+            <p>더 더 귀엽다?</p>
+            <p>용감한 쿠키 딸기맛 쿠키 악마맛 쿠키</p>
+            <p>다같이 모여봐!</p>
             </p>
+            <img src="https://shop-phinf.pstatic.net/20230406_295/1680774710536hoxdw_JPEG/%EC%BF%A0%ED%82%A4%EB%9F%B0_%EB%B4%89%EC%A0%9C%EC%9D%B8%ED%98%95_27cm(3).jpg?type=w860"
+                alt="Handmade Mac Coat" class="product-image">
+            <br>
             <select class="option-select">
                 <option value="size-small">Small</option>
                 <option value="size-medium">Medium</option>
@@ -143,7 +113,7 @@
             <ul class="review-list">
                 <li class="review-item">
                     <div class="review-header">
-                        <h3 class="review-title">Great product!</h3>
+                        <h3 class="review-title">넘모 커여워요~</h3>
                         <p class="review-date">Posted on January 1, 2022</p>
                     </div>
                     <p class="review-content">I love this handmade mac coat. It fits perfectly and the quality is
