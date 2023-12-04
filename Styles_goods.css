@@ -57,7 +57,7 @@ body{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 300px;
+    width: 200px;
 }
 
 .popup-item img {
@@ -174,6 +174,16 @@ header {
 .items {
     width: 1200px;
     height: 800px;
-
     transform: translate(25%, 0%);
+}
+.find_item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.link_item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
