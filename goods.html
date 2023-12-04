@@ -21,21 +21,21 @@
                     src="https://shop-phinf.pstatic.net/20231120_223/1700461846809Iq8iG_PNG/CRO_Logo_ENG2.png"
                     data-src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
                     class="_1QhZSUVBeK" alt="쿠키런스토어"></a></h1>
-        <div class="find_item">
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="검색어를 입력하세요" maxlength="500">
-                <button class="_1H_iy_tmiI N=a:GNB.search" onclick="searchItems()">
-                    <span class="Y4Wg6LWa6z"><span class="blind">검색하기</span></span>
-                </button>
-            </div>
-            <div class="list">
-                <button onclick="filterItems('')">전체</button>
-                <button onclick="filterItems('clothes')">의상</button>
-                <button onclick="filterItems('electronics')">전자제품</button>
-                <button onclick="filterItems('food')">음식</button>
-            </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="검색어를 입력하세요" maxlength="500">
+            <button class="_1H_iy_tmiI N=a:GNB.search" onclick="searchItems()">
+                <span class="Y4Wg6LWa6z"><span class="blind">검색하기</span></span>
+            </button>
         </div>
 
+   
+        <div class="list" style="display: flex; gap: 40px;">
+            <button onclick="filterItems('')" style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">전체</button>
+            <button onclick="filterItems('clothes')" style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">의상</button>
+            <button onclick="filterItems('electronics')" style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">전자제품</button>
+            <button onclick="filterItems('food')" style="border: none; background-color: transparent; font-size: 24px; font-family: Arial, sans-serif;">음식</button>
+        </div>
     </div>
 
     <div class="items">
@@ -189,6 +189,17 @@
             }
         }
 
+        function searchItems() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase(); // 검색어를 소문자로 변환
+            const filteredItems = items.filter(item => item.name.toLowerCase().includes(searchInput)); // 검색어를 포함하는 아이템 필터링
+
+            // 필터링된 아이템을 첫 페이지에 표시
+            displayItems(filteredItems, 0, itemsPerPage);
+
+            // 필터링된 아이템에 대한 페이징 표시
+            displayPagination(filteredItems.length, 1);
+        }
+
         function filterItems(category) {
             let filteredItems;
 
@@ -235,8 +246,6 @@
             // 아이템을 클릭했을 때의 동작을 여기에 추가
             navigateToItemDetailPage(item);
         });
-
-
 
         function getQueryParam(name) {
             const urlSearchParams = new URLSearchParams(window.location.search);
