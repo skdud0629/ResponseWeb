@@ -1,142 +1,336 @@
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+  /* 이벤트 스타일을 여기에 작성하세요 */
+  @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 body {
   font-family: 'Do Hyeon', sans-serif;
 }
+  #header {
 
-.header {
-    position: fixed;
-    top: 0;
-    width: 150%;
-    background-color: rgba(156, 111, 27, 0.74);
-    z-index: 1;
-}
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 150%;
+      background-color: rgba(156, 111, 27, 0.74);
+      z-index: 1;
 
+  }
 
-.nav_link {
-    display: inline-block;
-    margin-right: 10px;
-    /* 간격 조절 */
-    font-size: 20px;
-    font-weight: 500;
-    color: #000000;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
+  .header {
+      background-color: rgba(156, 111, 27, 0.74);
+      font-size: 20px;
+      font-weight: 500;
+  }
 
-img {
-    max-width: 100%;
-    /* 이미지가 부모 요소에 맞게 크기 조절 */
-    height: auto;
-    /* 가로 세로 비율 유지 */
-}
+  .nav_link {
+      display: inline-block;
+      margin-right: 10px;
+      /* 간격 조절 */
+      font-size: 20px;
+      font-weight: 500;
+      color: #000000;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+  }
 
-.nav {
-    position: relative;
-    width: 98%;
-    height: 80px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
+  .nav {
+      position: relative;
+      width: 98%;
+      height: 80px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+  }
 
+  .nav-logo-th {
+      width: 70px;
+      height: 100%;
+      margin-right: 20px;
 
-.nav-logo-th {
-    width: 70px;
-    height: 100%;
-    margin-right: 20px;
+  }
 
-}
+  .nav-logo {
+      width: 200px;
+      height: 100%;
+      margin-right: 20px;
 
-.nav-logo {
-    width: 200px;
-    height: 100%;
-    margin-right: 20px;
+  }
 
-}
+  #logo {
+      width: 100px;
+      height: 100px;
+  }
 
-/* 
-.nav-logo img {
-    width : 30%;
-    height: 100%;
-}*/
-body {
-    background-image: url(https://mblogthumb-phinf.pstatic.net/MjAyMDA4MDJfOTYg/MDAxNTk2Mzc2MTUwNzY3.fr6lmGecY5rafiV-QG3Ga7h5d-AP81Ku_iy-hIFcEwgg.f2NHwPreUTW--ee6xaMJmDHqjjFXm77KenESyQ1Hr1Ag.JPEG.cocoly00/2020080211370500-02CB906EA538A35643C1E1484C4B947D.jpg?type=w800);
-    background-size: 100% 80%;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-}
+  #event-container {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
 
-.main_visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    /* 화면 높이의 100%로 설정하여 수직 가운데 정렬 */
-    background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
-    background-clip: border-box;
-    background-position: top center;
-    background-size: cover;
-    /* 이미지를 화면에 꽉 차게 설정, 비율 유지 */
-    background-repeat: no-repeat;
-    text-align: center;
-}
+  }
 
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
+  .event-container {
+      background-color: #ffffff8f;
+      width: 80%;
+      height: 900px;
+      padding-bottom: 200px;
+      margin-top: 70px;
+  }
 
 
-.bg_anime_04 {
-    position: absolute;
-    width: 14%;
-    top: 16%;
-    right: 2%;
-    object-fit: cover;
-}
-
-.footer {
-    position: relative;
-    width: 100%;
-    background-color: rgb(255, 174, 0);
-    z-index: 1000;
-}
-
-.footer_item01 {
-    width: 20%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-.footer_item02 {
-    width: 5%;
-    height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%);
-    display: block;
-    margin: 0 auto;
-}
-
-.footer_tag {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-
-    display: block;
-    text-align: center;
-    /* 가운데 정렬 추가 */
-}
+  .img1 {
+      width: 120px;
+      height: 130px;
+  }
 
 
+  @media (max-width: 768px) {
+      .icon {
+          display: block;
+          text-align: center;
+          margin-bottom: 20px;
+      }
+  }
+
+  .container {
+      background-color: #ffffff8f;
+      width: 80%;
+      height: 900px;
+      padding-bottom: 200px;
+      margin-top: 70px;
+      text-align: center;
+      /*글자 중앙 정렬*/
+      display: flex;
+      /*가로로 일렬 배치*/
+      justify-content: center;
+      /*수평 중앙*/
+      align-items: center;
+      /*수직 중앙 -> container의 높이값이 있어야 적용됨*/
+      height: 100vh;
+      
+      /*vh??*/
+  }
+
+  .icon span:after {
+      content: '';
+      /*가상클래스 before, after는 무조건 content가 있어야 작동*/
+      position: absolute;
+      background-color: #000;
+      width: 10px;
+      height: 10px;
+      /*transform은 한 요소에 1번밖에 못쓰므로 합쳐줘야함*/
+      transform: rotate(45deg) translateX(-50%);
+      bottom: -5px;
+      left: 50%;
+      /*1. 왼쪽에서 50%위치에 둔다.*/
+      /*2. 크기값을 50%만큼 이동시켜준다.->항상 중앙에 위치하게됨*/
+
+  }
+
+  /*icon요소를 hover하면 -> icon의 자식 중 span에서 어떠한 변화가 있게 만듬*/
+  .icon:hover span {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  .fade-in {
+      opacity: 0;
+      animation: fadeInAnimation 2s ease-in-out forwards;
+  }
+
+  @keyframes fadeInAnimation {
+      0% {
+          opacity: 0;
+      }
+
+      100% {
+          opacity: 1;
+      }
+  }
+
+  body {
+      font-size: 20px;
+
+  }
+
+
+  .icon span {
+      position: absolute;
+      /*어떤 요소에 absoult를ㄹ 주면 블럭요소는 inline으로 변경됨.*/
+      background-color: #000;
+      width: 200px;
+      color: #fff;
+      top: -80px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      left: 50%;
+      /*1. 왼쪽에서 50%위치에 둔다.*/
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: 0.5s;
+      visibility: hidden;
+      /*자릿값을 유지하되, 존재자체가 사라지게 함-display:none은 자릿값도 사라지게함*/
+
+  }
+
+  .container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+  }
+
+
+  /* Styles for small screens */
+  @media (max-width: 768px) {
+      .media {
+          grid-template-columns: 1fr;
+          /* Change the number of columns to 1 for small screens */
+          padding: 0 1rem;
+          /* Adjust padding for better responsiveness */
+      }
+
+      .media-item {
+          width: 100%;
+          height: auto;
+          margin: 10px 0;
+      }
+  }
+
+  .video-wrapper {
+      border-radius: 10px;
+      border: 2px solid #FF0000;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: inline-block;
+  }
+
+  .border_about {
+      border: rgba(255, 174, 0, 0.671) solid 6px;
+      box-sizing: border-box;
+      /* 추가 */
+  }
+
+  .border_about:hover {
+      border: rgba(202, 138, 0, 0.671) solid 6px;
+      box-sizing: border-box;
+      /* 추가 */
+      /*animation: fuwafuwa-2 1s ease-in-out infinite alternate;   */
+  }
+
+
+  @keyframes fuwafuwa-2 {
+
+      0%,
+      100% {
+          transform: translateY(-30px);
+          /* 수정: -webkit-transform 제거 */
+      }
+  }
+
+  .content {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      /* 추가 */
+      background-color: #ffffff8e;
+      padding: 6%;
+      border-radius: 20px;
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+      text-align: center;
+      /* 추가 */
+  }
+
+  .main_visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      /* 화면 높이의 100%로 설정하여 수직 가운데 정렬 */
+      background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
+      background-clip: border-box;
+      background-position: top center;
+      background-size: cover;
+      /* 이미지를 화면에 꽉 차게 설정, 비율 유지 */
+      background-repeat: no-repeat;
+      text-align: center;
+  }
+
+  .container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+  }
+
+
+  .bg_anime_04 {
+      position: absolute;
+      width: 14%;
+      top: 16%;
+      right: 2%;
+      object-fit: cover;
+  }
+
+  .footer {
+      position: relative;
+      width: 100%;
+      background-color: rgb(255, 174, 0);
+      z-index: 1000;
+  }
+
+  .footer_item01 {
+      width: 20%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+  }
+
+  .footer_item02 {
+      width: 5%;
+      height: 100%;
+      object-fit: contain;
+      filter: grayscale(100%);
+      display: block;
+      margin: 0 auto;
+  }
+
+  .footer_tag {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      display: block;
+      text-align: center;
+      /* 가운데 정렬 추가 */
+  }
+
+  img {
+      max-width: 100%;
+      /* 이미지가 부모 요소에 맞게 크기 조절 */
+      height: auto;
+      /* 가로 세로 비율 유지 */
+  }
+
+
+
+  body {
+      background-image: url(https://mblogthumb-phinf.pstatic.net/MjAyMDA4MDJfOTYg/MDAxNTk2Mzc2MTUwNzY3.fr6lmGecY5rafiV-QG3Ga7h5d-AP81Ku_iy-hIFcEwgg.f2NHwPreUTW--ee6xaMJmDHqjjFXm77KenESyQ1Hr1Ag.JPEG.cocoly00/2020080211370500-02CB906EA538A35643C1E1484C4B947D.jpg?type=w800);
+      background-size: 100% 80%;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+  }
+
+
+  
 @keyframes fuwafuwa-2 {
 
     0%,
@@ -144,20 +338,6 @@ body {
         transform: translateY(-30px);
         /* 수정: -webkit-transform 제거 */
     }
-}
-
-.content {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    /* 추가 */
-    background-color: #ffffff8e;
-    padding: 6%;
-    border-radius: 20px;
-    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
-    text-align: center;
-    /* 추가 */
 }
 
 .Label {
@@ -169,100 +349,6 @@ body {
     font-weight: 500;
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
     border-radius: 16px;
-}
-
-
-
-
-.border_about {
-    border: rgba(255, 174, 0, 0.671) solid 6px;
-    box-sizing: border-box;
-    /* 추가 */
-}
-
-.border_about:hover {
-    border: rgba(202, 138, 0, 0.671) solid 6px;
-    box-sizing: border-box;
-    /* 추가 */
-    /*animation: fuwafuwa-2 1s ease-in-out infinite alternate;   */
-}
-
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-
-.start_mp4 {
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
-    /* 화면의 높이에 맞게 조절 */
-}
-
-
-/* 영상*/
-
-.media {
-    text-rendering: optimizelegibility;
-    -webkit-font-smoothing: antialiased;
-    word-break: keep-all;
-    text-align: center;
-    font-family: inherit;
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    box-sizing: border-box;
-    list-style: none;
-    padding: 0 2.25rem;
-    column-gap: 0.9375rem;
-    row-gap: 2.0625rem;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-/* Default styles for videos */
-.media-item {
-    display: inline-block;
-    width: 560px;
-    height: 315px;
-    margin: 10px;
-}
-
-/* Styles for small screens */
-@media (max-width: 768px) {
-    .media {
-        grid-template-columns: 1fr;
-        /* Change the number of columns to 1 for small screens */
-        padding: 0 1rem;
-        /* Adjust padding for better responsiveness */
-    }
-
-    .media-item {
-        width: 100%;
-        height: auto;
-        margin: 10px 0;
-    }
-}
-
-.video-wrapper {
-    border-radius: 10px;
-    border: 2px solid #FF0000;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: inline-block;
-}
-
-.fade-in {
-    opacity: 0;
-    animation: fadeInAnimation 2s ease-in-out forwards;
 }
 
 @keyframes fadeInAnimation {
@@ -330,23 +416,7 @@ body {
     visibility: visible;
 }
 
-.container {
-    text-align: center;
-    /*글자 중앙 정렬*/
-    display: flex;
-    /*가로로 일렬 배치*/
-    justify-content: center;
-    /*수평 중앙*/
-    align-items: center;
-    /*수직 중앙 -> container의 높이값이 있어야 적용됨*/
-    height: 100vh;
-    /*vh??*/
-}
 
-.img1 {
-    width: 120px;
-    height: 130px;
-}
 
 .container {
     background-color: #ffffff8f;
@@ -354,4 +424,5 @@ body {
     height: 900px;
     padding-bottom: 200px; 
     margin-top: 70px;
+    border-radius: 20px;
 }
