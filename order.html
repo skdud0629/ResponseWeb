@@ -2,89 +2,11 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
     <title>결제 페이지</title>
-    <style>
-        
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Styles_order.css">
 
-        .logo {
-            text-align: center;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            font-size: 14px;
-        }
-
-        .container {
-            width: 633px;
-            margin: 0 auto;
-            background-color: #f5f5f5;
-            padding: 20px;
-            color: #333;
-        }
-
-        h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .section {
-            background-color: #fff;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        .section:last-child {
-            margin-bottom: 0;
-        }
-
-        .button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            margin-top: 20px;
-        }
-
-        .find_item {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .link_item {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .footer {
-            /* 추가된 푸터 스타일 */
-            /*  border-top: 2px solid #ddd;*/
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-            height: auto;
-        }
-
-        /* 추가적인 CSS 스타일링 */
-    </style>
 </head>
 
 <body>
@@ -95,7 +17,7 @@
             <p id="userId" style="display:none"></p>
         </div>
 
-        <h1 class="logo"><a href="/cookierun" class="_2yPVRArtDH N=a:GNB.storehome"><img
+        <h1 class="logo"><a href="goods_login_success.html" class="_2yPVRArtDH N=a:GNB.storehome"><img
                     src="https://shop-phinf.pstatic.net/20231120_223/1700461846809Iq8iG_PNG/CRO_Logo_ENG2.png"
                     data-src="https://shop-phinf.pstatic.net/20231120_273/1700454835203IsrBj_PNG/CRO_Logo_ENG.png?type=m10000_10000"
                     class="_1QhZSUVBeK" alt="쿠키런스토어"></a></h1>
@@ -113,7 +35,7 @@
         <div class="section">
             <h2>주문 상품</h2>
             <div>
-                <img src="https://via.placeholder.com/100" alt="상품 이미지">
+                <img src="https://shop-phinf.pstatic.net/20230406_139/1680774590675RTw80_JPEG/81910424444651228_173986660.jpg?type=m510" alt="상품 이미지">
                 <p>상품명: 쿠키런 제품</p>
                 <p>가격: 12,000원</p>
                 <!-- 주문 상품 세부 목록 -->
@@ -133,7 +55,7 @@
 
         <div class="section">
             <h2>결제하기</h2>
-            <p>총 결제금액: 12,900원</p>
+            <strong><p>총 결제금액: 12,900원</p></strong>
             <a href="#" class="button">결제하기</a>
         </div>
     </div>

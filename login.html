@@ -27,27 +27,18 @@
 
  
   <script>
-     async function login() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+   async function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
 
-    // 실제 로그인 처리를 서버에 요청
-    const response = await fetch('/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `username=${username}&password=${password}`
-    });
-
-    if (response.redirected) {
-      // 로그인이 성공하면 서버에서 리다이렉트된 페이지로 이동
-      window.location.href = response.url;
-    } else {
-      // 로그인이 실패하면 경고 메시지 출력
-      alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+      if (response.redirected) {
+        // 로그인이 성공하면 서버에서 리다이렉트된 페이지로 이동
+        window.location.href = response.url;
+      } else {
+        // 로그인이 실패하면 경고 메시지 출력
+        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+      }
     }
-  }
 
     // 로그인 폼 제출 시 실행되는 함수
     document.getElementById("loginForm").addEventListener("submit", function(event) {
@@ -67,7 +58,7 @@
       }
     });
 
-  window.addEventListener('load', updateUIOnLogin);
+
 </script>
 </body>
 

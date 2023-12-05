@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .pagination {
@@ -72,7 +72,7 @@ body {
 }
 
 .popup-item-name {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
 }

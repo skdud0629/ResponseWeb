@@ -2,22 +2,34 @@
     position: fixed;
     top: 0;
     width: 150%;
-    background-color: rgba(255, 255, 255, 0.74) ;
+    background-color: rgba(255, 255, 255, 0.74);
     z-index: 1;
+    font-weight: bold;
 }
+
 .nav_link {
     display: inline-block;
-    margin-right: 10px; /* 간격 조절 */
+    margin-right: 10px;
+    /* 간격 조절 */
     font-size: 20px;
     font-weight: 500;
     color: #000000;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+    font-family: 'Nanum Gothic', sans-serif;
+    /* 한국어 글꼴 설정 */
 }
 
-img {
-    max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
-    height: auto; /* 가로 세로 비율 유지 */
+table img {
+    width: 400px;
+    height: auto;
+}
+
+table {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Nanum Gothic', sans-serif;
+    /* 한국어 글꼴 설정 */
 }
 
 .nav {
@@ -37,6 +49,9 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+    /* 한국어 글꼴 설정 */
+
 }
 
 .main_visual {
@@ -45,19 +60,23 @@ body {
     justify-content: center;
     position: relative;
     width: 100%;
-    height: 100vh; /* 화면 높이의 100%로 설정하여 수직 가운데 정렬 */
+    height: 100vh;
+    /* 화면 높이의 100%로 설정하여 수직 가운데 정렬 */
     background-image: url(https://file.thisisgame.com/upload/nboard/news/2019/06/12/20190612162035_7235.jpg);
     background-clip: border-box;
     background-position: top center;
-    background-size: cover; /* 이미지를 화면에 꽉 차게 설정, 비율 유지 */
+    background-size: cover;
+    /* 이미지를 화면에 꽉 차게 설정, 비율 유지 */
     background-repeat: no-repeat;
     text-align: center;
 }
 
 img {
-    max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
-    height: auto; /* 가로 세로 비율 유지 */
-    
+    max-width: 100%;
+    /* 이미지가 부모 요소에 맞게 크기 조절 */
+    height: auto;
+    /* 가로 세로 비율 유지 */
+
 }
 
 
@@ -66,12 +85,14 @@ img {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto; /* 추가 */
+    margin: 0 auto;
+    /* 추가 */
     background-color: #ffffff9f;
     padding: 6%;
     border-radius: 20px;
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
-    text-align: center; /* 추가 */
+    text-align: center;
+    /* 추가 */
 }
 
 .Label {
@@ -86,28 +107,32 @@ img {
 }
 
 img {
-    max-width: 100%; /* 이미지가 부모 요소에 맞게 크기 조절 */
-    height: auto; /* 가로 세로 비율 유지 */
+    max-width: 100%;
+    /* 이미지가 부모 요소에 맞게 크기 조절 */
+    height: auto;
+    /* 가로 세로 비율 유지 */
 }
-.nav-logo-th{
+
+.nav-logo-th {
     width: 70px;
     height: 100%;
     margin-right: 20px;
-    
+
 }
 
 .nav-logo {
     width: 200px;
     height: 100%;
     margin-right: 20px;
-    
+
 }
 
 .start_mp4 {
     object-fit: cover;
     width: 100%;
-    height: 100vh; /* 화면의 높이에 맞게 조절 */
-  }
+    height: 100vh;
+    /* 화면의 높이에 맞게 조절 */
+}
 
 .about_area {
     text-align: center;
@@ -117,14 +142,15 @@ img {
 html {
     scroll-behavior: smooth;
 }
-.footer{
+
+.footer {
     position: relative;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.795);
     z-index: 1000;
 }
 
-.footer_item01{
+.footer_item01 {
     width: 20%;
     height: 100%;
     object-fit: contain;
@@ -132,7 +158,7 @@ html {
     margin: 0 auto;
 }
 
-.footer_item02{
+.footer_item02 {
     width: 5%;
     height: 100%;
     object-fit: contain;
@@ -141,11 +167,12 @@ html {
     margin: 0 auto;
 }
 
-.footer_tag{
+.footer_tag {
     width: 100%;
     height: 100%;
     object-fit: contain;
 
     display: block;
-    text-align: center; /* 가운데 정렬 추가 */
+    text-align: center;
+    /* 가운데 정렬 추가 */
 }
